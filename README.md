@@ -1,0 +1,2 @@
+# GUI
+Grafiskt gränssnitt
