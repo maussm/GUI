@@ -1,0 +1,220 @@
+body {
+    font-family: "Times New Roman", Times, serif;
+    background-color: rgb(189, 187, 187);
+
+}
+
+
+
+header {
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    box-shadow: 0 0 10px #666;
+
+   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#e2e2e2+0,dbdbdb+50,d1d1d1+51,fefefe+100;Grey+Gloss+%231 */
+background: rgb(226,226,226); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe',GradientType=0 ); /* IE6-9 */
+
+
+}
+
+ul {
+    display: block;
+    list-style-type:circle;
+    margin-block-start: 2em;
+    margin-block-end: 2em;
+    margin-inline-start: 0px;
+    margin-inline-end: 20px;
+    padding-inline-start: 40px;
+    cursor: default;
+    pointer-events: none;        
+    text-decoration: none;
+    color: grey;
+}
+
+header > nav {
+    display: flex;
+    max-width: 1200px;
+    margin: auto;
+}
+
+header input {
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 0px;
+    padding-left: 5px;
+    width: 150px;
+    transition: all 0.5s;
+}
+
+header input:focus {
+    width: 200px;
+}
+
+header a {
+    color: black;
+    text-decoration: none;
+    line-height: 50px;
+    padding: 0 15px;
+}
+
+header a:hover {
+    background-color: grey;
+}
+
+#menu {
+    margin-left: auto;
+    display: flex;
+}
+
+#jumbo {
+    height: 500px;
+    padding-top: 70px;
+    background-image: url(Secondhand.jpeg);
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    box-shadow: 0 0 10px #666;
+    padding: 50px;
+
+    
+}
+
+
+
+#jumbo > article {
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 50%;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px #666;
+}
+
+#jumbo > article > h2 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-size:xx-large;
+}
+
+#jumbo > article > a {
+    display: block;
+    background-color: rgb(67, 144, 144);
+    color: rgb(0, 0, 0);
+    margin: 30px auto 0px auto;
+    width: 40%;
+    text-align: center;
+    padding: 18px;
+    box-shadow: 0 0 10px #666;
+    cursor: default;
+    pointer-events: none;        
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+    list-style-type: none;
+}
+
+
+
+
+
+
+#wrapper > main {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+}
+
+#wrapper > main > h1 {
+    width: 100%;
+    font-size: 36px;
+    font-weight: bold;
+    border-bottom: 2px solid black;
+    margin: 20px 0px;
+}
+
+form {
+    display:contents;
+}
+
+ul {
+    cursor: default;
+    pointer-events: none;        
+    text-decoration: none;
+    color: grey;
+
+}
+
+
+.mobile-only {
+    display: none;
+}
+
+
+@media screen and (max-width: 850px) {
+    #wrapper > main > figure {
+        width: 48%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #wrapper > header > nav {
+        flex-direction: column;
+    }
+
+    #menu {
+        flex-direction: column;
+        margin-left: 0px;
+    }
+
+    #wrapper > header > nav input {
+        width: 96%;
+        margin: 2%;
+        padding: 10px;
+    }
+
+    #wrapper > header > nav input:focus {
+        width: 96%;
+    }
+
+    .mobile-only {
+        display: block;
+    }
+
+    #menu-btn {
+        position: fixed;
+        right: 0px;
+        top: 0px;
+    }
+
+    #menu {
+        height: 0px;
+        overflow: hidden;
+        transition: 0.5s all;
+    }
+
+    #menu-btn:focus + #menu, #menu:hover {
+        height: 205.44px;
+    }
+
+    #wrapper > main > figure {
+        width: 100%;
+    }
+
+    #wrapper > footer > article {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    #jumbo > article {
+        width: 80%;
+    }
+}
