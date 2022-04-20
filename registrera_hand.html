@@ -9,12 +9,35 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
     </head>
+    <h1 class="registrera">
+        Registrera
+    </h1>
+    <div class="enhet">
+        <select id="valdenhet" name="valdenhet" form="enhetsform">
+            <option value="enhet1">Enhet 1</option>
+            <option value="enhet2">Enhet 2</option>
+            <option value="enhet3">Enhet 3</option>
+            <option value="enhet4">Enhet 4</option> 
+            </select>
+    </div>
     <div class="container">
         <form>
-            <label for="enhet-name">Enhetens benämning på händelsen:*</label>
+            <label for="enhet-name">Enhetens benämning på händelsen:</label>
             <input type="text" id="enhet-name" name="enhet-name">
+            <label for="aktivitet">Aktivitet i Tjänstekatalogen:</label>
+            <select id="aktivitet" name="aktivitet" form="aktivitetform">
+            <option value="ex1">Exempel 1</option>
+            <option value="ex2">Exempel 2</option>
+            <option value="ex3">Exempel 3</option>
+            <option value="ex4">Exempel 4</option> 
+            </select>
             <label for="antal">Antal deltagare:</label>
             <input type="text" id="antal" name="antal">
+            <label for="namnge">Namnge deltagare:</label>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
         </form>
     </div>
     
