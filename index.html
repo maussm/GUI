@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html xmlns:th="http://www.thymeleaf.org" lang="sv">
     <head>
         <meta charset="utf-8">
         <title>Stockholms Stadsmission</title>
-        <link href="static/style.css" rel="stylesheet">
+        <link th:href="@{style.css}" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,11 +28,9 @@
             <article>
                 <h2>DIGGINS</h2>
                 <select id="enhetsval" name="valdenhet" form="enhetsform">
-                    <option value="enhet1">Enhet 1</option>
-                    <option value="enhet2">Enhet 2</option>
-                    <option value="enhet3">Enhet 3</option>
-                    <option value="enhet4">Enhet 4</option> 
+                    <option th:each="activity: ${activites}" th:value="${activity.id}" th:text="${activity.activityId}"></option>
                 </select>
             </article>
         </section>
+    </body>
     </html>
