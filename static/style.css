@@ -289,6 +289,13 @@ input[type=text], select {
     display: none;
 }
 
+#selUser{
+    width: 200px;
+    padding: 10px;
+
+
+}
+
 
 @media screen and (max-width: 850px) {
     #wrapper > main > figure {
