@@ -9,7 +9,38 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
     </head>
+    <body>
+        <header>
+            <nav>
+                <a>Stockholms Stadsmission</a>
+
+                <a href="#" id="menu-btn" class="mobile-only">Menu</a>
+
+                <div id="menu">
+                    <input type="search" placeholder="Namn på vald enhet...">
+                </div>
+            </nav>
+        </header>
 
 
+        <section id="jumbo">
+            <article>
+                <h2>Följa upp</h2>
+            <div id="form">
+
+                </div>
     
-</html>
+                <select id='selUser'>
+                    <option value='0'>Välj enhet...</option> 
+                    <option value='1'>Enhet 1</option> 
+                    <option value='2'>Enhet 2</option> 
+                    <option value='3'>Enhet 3</option> 
+               </select>
+               
+               <input type='button' value='Seleted option' id='but_read'>
+               
+               <br/>
+               <div id='result'></div>
+            </article>
+        </section>
+    </html>
