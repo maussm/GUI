@@ -89,6 +89,11 @@ button a {
     text-transform: uppercase;
     color: #000000;
 }
+
+#buttonside2side {
+    display: flex;
+    flex-direction: row;
+}
     
 #folder {
     height: 480px;
