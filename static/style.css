@@ -45,6 +45,12 @@ h1 {
     
     color: #000000;
 } 
+
+h1 a {
+    text-decoration: none;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #000000;
+}
     
 #jumbo {
     margin-top: 200px;
