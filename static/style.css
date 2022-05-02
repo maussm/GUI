@@ -83,6 +83,12 @@ button {
     margin: 15px;
     border: none;
 }
+
+button a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000000;
+}
     
 #folder {
     height: 480px;
