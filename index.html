@@ -16,16 +16,19 @@
             <a href="index.html"><img src="static/ssm-logga utan bakgrund.png" alt="Stockholms Stadsmissions logga" id="ssm-logga"></a>
             <h1>DIGGINS</h1>
         </div>
-    
+
+    <form action="http://webshare.mah.se/ctfroh/da158a/formtest.php" method="POST">
+
         <section id="jumbo">
             <article>
                 <h2>Välj enhet:</h2>
                 <select id="enhetsval" name="valdenhet" form="enhetsform">
                     <option th:each="activity: ${activites}" th:value="${activity.id}" th:text="${activity.activityId}"></option>
-                </select>
+                    </select>
                 <button><a href="meny.html">OK</a></button>
-            </article>
-        </section>
-    
+                </article>
+            </section>
+
+        </form>
     </body>
-    </html>
+</html>
