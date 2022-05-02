@@ -110,7 +110,7 @@ nav a {
     border-radius: 20px;
     } 
     
-nav a:hover, a:active {
+nav a:hover, nav a:active {
     text-decoration: none;
     text-transform: uppercase;
     background-color: #8DC2CE;
