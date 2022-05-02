@@ -142,13 +142,13 @@ nav a {
     text-transform: uppercase;
     color: #438D9D;
     border-radius: 20px;
+    padding: 40px;
     } 
     
-nav a:hover, nav a:active {
-    text-decoration: none;
-    text-transform: uppercase;
+nav a:hover {
     background-color: #8DC2CE;
-    width: 50%;
+    border-radius: 20px;
+    padding: 20px;
 }
 
 .active {
