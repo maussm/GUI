@@ -19,16 +19,15 @@
 
         <section id="jumbo">
             <article>
-                <h2>Följa upp</h2>
+                <h2>Följa upp:</h2>
             <div id="form">
-
                 </div>
     
-                <select id='selUser'>
-                    <option value='0'>Välj enhet...</option> 
-                    <option value='1'>Enhet 1</option> 
-                    <option value='2'>Enhet 2</option> 
-                    <option value='3'>Enhet 3</option> 
+                <select id="selUser">
+                    <option value="0">Välj enhet...</option> 
+                    <option value="1">Enhet 1</option> 
+                    <option value="2">Enhet 2</option> 
+                    <option value="3">Enhet 3</option> 
                </select>
                
                <input type='button' value='Seleted option' id='but_read'>
@@ -36,39 +35,6 @@
                    
                 </div>
 
-                <div id="calendar"></div>
-    <!-- Add jQuery library (required) -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
-
-    <!-- Add the evo-calendar.js for.. obviously, functionality! -->
-    <script src="https://cdn.jsdelivr.net/npm/evo-calendar@1.1.2/evo-calendar/js/evo-calendar.min.js"></script>       
-              <script src="script.js"></script>
-              <script>
-                $ (document).reday(function() {
-                    $('#calendar').evoCalendar({
-                          calendarEvents: [
-                              {
-                                  id: 'event1', // Event's ID (required)
-                                  name: "New Year", // Event name (required)
-                                  date: "January/1/2020", // Event date (required)
-                                  type: "holiday", // Event type (required)
-                                  everyYear: true // Same event every year (optional)
-                                
-                              },
-                              {
-                                  name: "Vacation Leave",
-                                  badge: "02/13 - 02/15", // Event badge (optional)
-                                  date: ["February/13/2020", "February/15/2020"], // Date range
-                                  description: "Vacation leave for 3 days.", // Event description (optional)
-                                  type: "event",
-                                  color: "#63d867" // Event custom color (optional)
-                              }
-                            ]
-                                })
-                              })
-            
-
-              </script>
             </article>
         </section>
 
