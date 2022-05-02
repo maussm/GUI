@@ -23,7 +23,7 @@
 <form action="/meny" method="post">
         <section id="jumbo">
             <article>
-                <h2>Välj enhet:</h2>
+                <h2 id="title">Välj enhet:</h2>
                 <select id="enhetsval" name="valdenhet" form="enhetsform">
                     <option th:each="activity: ${activites}" th:value="${activity.id}" th:text="${activity.activityId}"></option>
                     </select>
