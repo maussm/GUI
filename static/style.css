@@ -132,6 +132,7 @@ nav a:hover, nav a:active {
 #edit {
     display: flex;
     flex-direction: row;
+    margin: 10px 0px;
 }
     
     /* The switch - the box around the slider */
