@@ -148,8 +148,11 @@ nav a:hover, nav a:active {
     text-decoration: none;
     text-transform: uppercase;
     background-color: #8DC2CE;
-    border-radius: 20px;
-    padding: 20px;
+    width: 50%;
+}
+
+.active {
+    background-color: #8DC2CE;
 }
 
 #edit-icon {
