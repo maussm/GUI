@@ -80,3 +80,7 @@ document.querySelector(".next").addEventListener("click", () => {
 });
 
 renderCalendar();
+
+<script>
+  $("#calendar").evoCalendar();
+</script>
