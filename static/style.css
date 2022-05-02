@@ -102,6 +102,10 @@ nav a:hover, a:active {
     border-radius: 20px;
     padding: 20px;
 }
+
+#edit-icon {
+    width: 30px;
+}
     
     /* The switch - the box around the slider */
     .switch {
