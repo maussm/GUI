@@ -24,7 +24,7 @@
         <section id="jumbo">
             <article>
                 <h2 class="title">Välj enhet:</h2>
-                <select id="enhetsval" name="valdenhet" form="enhetsform">
+                <select id="selector" name="valdenhet" form="enhetsform">
                     <option th:each="activity: ${activites}" th:value="${activity.id}" th:text="${activity.activityId}"></option>
                     </select>
                 <button><a href="meny.html">OK</a></button>
