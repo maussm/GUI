@@ -1,6 +1,6 @@
 * {
     margin: 0;
-    padding: 10px;
+    padding: 0px;
     box-sizing: border-box;
     font-family: "Quicksand", sans-serif;
     width: auto;
@@ -143,6 +143,7 @@ button {
     padding: 10px;
     border-radius: 20px;
     border: none;
+    margin: 15px;
     border: 0;
     width: auto;
     text-transform: uppercase;
