@@ -4,33 +4,29 @@
         <meta charset="utf-8">
         <title>Stockholms Stadsmission</title>
         <link href="static/style.css" rel="stylesheet">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+        <title>Stockholms Stadsmission: DIGGINS Rapporteringsverktyg</title>
     </head>
-    <body id="frontpage">
-        <header>
-            <nav>
-                <a>Stockholms Stadsmission</a>
-
-                <a href="#" id="menu-btn" class="mobile-only">Menu</a>
-
-                <div id="menu">
-                    <input type="search" placeholder="Välj organisation">
-                    <a href="#">Kontakt</a>
-                </div>
-            </nav>
-        </header>
-
-
+    <body>
+    
+        <div id="menu">
+            <a href="index.html"><img src="static/ssm-logga utan bakgrund.png" alt="Stockholms Stadsmissions logga" id="ssm-logga"></a>
+            <h1>DIGGINS</h1>
+        </div>
+    
         <section id="jumbo">
             <article>
-                <h2>DIGGINS</h2>
+                <h2>Välj enhet:</h2>
                 <select id="enhetsval" name="valdenhet" form="enhetsform">
                     <option th:each="activity: ${activites}" th:value="${activity.id}" th:text="${activity.activityId}"></option>
                 </select>
+                <button><a href="meny.html">OK</a></button>
             </article>
         </section>
+    
     </body>
     </html>
