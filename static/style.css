@@ -68,6 +68,30 @@ h1 a {
     flex-direction: column;
     align-items: center;
 }
+
+#historik-bakgrund {
+    margin-top: 180px;
+    height: 480px;
+    padding-top: 70px;
+    border-radius: 15px;
+    background-color: #8DC2CE;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    box-shadow: 0 0 10px #666;
+    padding: 50px;
+}
+    
+#historik-bakgrund > article {
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 50%;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
     
 button {
     background: #F38649;
