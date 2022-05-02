@@ -10,21 +10,35 @@
         <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
     </head>
     <body>
-        <div class="container">
-            <form>
-                <label for="UNO">UNO-kod:</label>
-                <input type="text" id="UNO" name="UNO">
-                <label for="fname">Förnamn:</label>
-                <input type="text" id="fname" name="fname">
-                <label for="lname">Efternamn:</label>
-                <input type="text" id="lname" name="lname">
-                <label for="birthyear">Födelseår(barn):</label>
-                <input type="text" id="birthyear" name="birthyear">
-                <label for="language">Språk:</label>
-                <input type="text" id="language" name="language">
-                <label for="land">Land:</label>
-                <input type="text" id="land" name="land">
-            </form>
+        
+        <div id="menu">
+            <a href="index.html"><img src="static/ssm-logga utan bakgrund.png" alt="Stockholms Stadsmissions logga" id="ssm-logga"></a>
+            <h1>DIGGINS</h1>
         </div>
+
+        <nav>
+            <h2><a href="registrera_hand.html">Aktivitet</a></h2>
+            <h2><a href="registrera_hand.html">Deltagare</a></h2>
+        </nav>
+
+        <section id="folder">
+            <article>
+                <form>
+                    <label for="UNO">UNO-kod:</label>
+                    <input type="text" id="UNO" name="UNO">
+                    <label for="fname">Förnamn:</label>
+                    <input type="text" id="fname" name="fname">
+                    <label for="lname">Efternamn:</label>
+                    <input type="text" id="lname" name="lname">
+                    <label for="birthyear">Födelseår(barn):</label>
+                    <input type="text" id="birthyear" name="birthyear">
+                    <label for="language">Språk:</label>
+                    <input type="text" id="language" name="language">
+                    <label for="land">Land:</label>
+                    <input type="text" id="land" name="land">
+                </form>
+                <button>Registrera deltagare</button>
+            </article>
+        </section>
     </body>
 </html>
