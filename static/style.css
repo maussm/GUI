@@ -55,7 +55,6 @@ label {
     
 h1 {
     position: absolute;
-    height: 102px;
     left: 600px;
     top: 38px;
     
@@ -64,6 +63,7 @@ h1 {
     font-size: 64px;
     font-style: normal;
     font-weight: 900;
+    height: 102px;
     line-height: 77px;
 
     display: flex;
