@@ -14,7 +14,7 @@
 }
 
 
-#selector {
+#selected {
     border: 2px solid #298089;
     border-radius: 5px;
     font-size: 18px;
@@ -27,6 +27,15 @@
     position: absolute;
     top: 70px;
     right: 40px
+}
+
+#selector {
+    border: 2px solid #298089;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 0.5rem;
+    width: 30%;
+    display: block;
 }
 
 input, 

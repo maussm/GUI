@@ -17,7 +17,7 @@
             <h1><a href="index.html">DIGGINS</a></h1>
        
                 <section id="chosen">
-                    <select id="selector" name="valdenhet" form="enhetsform">
+                    <select id="selected" name="valdenhet" form="enhetsform">
                         <option th:each="costCenter: ${costCenters}" th:value="${costCenter.id}" th:text="${costCenter.name}"></option>
                         </select>
                 </section>
