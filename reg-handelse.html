@@ -2,7 +2,7 @@
 <html lang="sv">
     <head>
         <meta charset="utf-8">
-        <link href="static/style.css" rel="stylesheet">
+        <link href="/static/style.css" rel="stylesheet">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,18 +13,15 @@
     <body>
 
         <div id="menu">
-            <a href="/"><img src="static/SSM_logga_utan_bakgrund.svg" alt="Stockholms Stadsmissions logga" id="ssm-logga"></a>
+            <a href="/"><img src="/static/SSM_logga_utan_bakgrund.svg" alt="Stockholms Stadsmissions logga" id="ssm-logga"></a>
             <h1><a href="/">DIGGINS</a></h1>
+            <!--/*@thymesVar id="costCenterName" type="se.mau.webbserver.entity.cost_center.CostCenter"*/-->
+            <span id="chosen" th:text="${costCenterName}"></span>
         </div>
 
         <nav>
-            <h2 class="active"><a href="reg-handelse.html">Aktivitet</a></h2>
-            <h2><a href="reg-deltagare.html">Deltagare</a></h2>
-            <section id="chosen">
-                <select id="selected" name="valdenhet" form="enhetsform">
-                    <option th:each="costCenter: ${costCenters}" th:value="${costCenter.id}" th:text="${costCenter.name}"></option>
-                    </select>
-            </section>
+            <h2 class="active"><a th:href="'/reg_hand/'+${costCenterId}">Aktivitet</a></h2>
+            <h2><a th:href="'/reg_del/'+${costCenterId}">Deltagare</a></h2>
         </nav>
 
         <section id="folder">
@@ -45,8 +42,8 @@
                     <label class="switch">
                         <input type="checkbox">
                         <span class="slider round"></span>
-                    </label>                  
-                    <button>Registrera händelse</button>        
+                    </label>
+                    <button>Registrera händelse</button>
                 </form>
             </article>
         </section>
