@@ -18,6 +18,14 @@ input#antal{
     width: 50%;
 }
 
+#info1{
+   float: right;
+
+}
+
+#info2{
+    float: right;
+}
 
 #selected {
     border: 2px solid #298089;
