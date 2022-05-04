@@ -19,6 +19,11 @@
         <nav>
             <h2><a href="reg-handelse.html">Aktivitet</a></h2>
             <h2 class="active"><a href="reg-deltagare.html">Deltagare</a></h2>
+            <section id="chosen">
+                <select id="selected" name="valdenhet" form="enhetsform">
+                    <option th:each="costCenter: ${costCenters}" th:value="${costCenter.id}" th:text="${costCenter.name}"></option>
+                    </select>
+            </section>
         </nav>
 
         <section id="folder">
