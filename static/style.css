@@ -6,7 +6,12 @@
 }
 
 #aktivitet {
-    width: 100%;
+    width: 19%;
+}
+
+input#antal{
+    width: 5%;
+
 }
 
 #number {
@@ -44,7 +49,7 @@ textarea {
     border-radius: 5px;
     font-size: 18px;
     padding: .5rem;
-    width: 100%;
+
     
     display: block;
 }
@@ -188,14 +193,12 @@ button a {
     padding: 50px;
     padding-top: 70px;
     
-    display: flex;
+
     justify-content: center;
     align-items: center;  
 }
     
-#folder > article {
-    display: flex;
-}
+
 
 nav {
     background-color: #BADFE8;
