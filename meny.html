@@ -15,6 +15,12 @@
         <div id="menu">
             <a href="index.html"><img src="static/ssm-logga utan bakgrund.png" alt="Stockholms Stadsmissions logga" id="ssm-logga"></a>
             <h1><a href="index.html">DIGGINS</a></h1>
+       
+                <section id="chosen">
+                    <select id="selector" name="valdenhet" form="enhetsform">
+                        <option th:each="costCenter: ${costCenters}" th:value="${costCenter.id}" th:text="${costCenter.name}"></option>
+                        </select>
+                </section>
         </div>
         
          <section id="jumbo">

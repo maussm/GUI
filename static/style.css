@@ -13,6 +13,22 @@
     width: 50%;
 }
 
+
+#selector {
+    border: 2px solid #298089;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 0.5rem;
+    width: 18%;
+    display: block;
+    float: right;
+    text-align: left;
+    position: relative;
+    position: absolute;
+    top: 70px;
+    right: 40px
+}
+
 input, 
 textarea {
     border: 2px solid #298089;
