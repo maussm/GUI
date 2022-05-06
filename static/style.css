@@ -18,12 +18,6 @@ input#antal{
     width: 50%;
 }
 
-#info1{
-    float: right;
-    width: 70%;
- }
-
-
  
 
 #selected,  #chosen {
@@ -56,9 +50,10 @@ textarea {
     border-radius: 5px;
     font-size: 18px;
     padding: .5rem;
+    text-align: center;
 
 
-    display: block;
+
 }
 
 #calendar {
@@ -192,6 +187,33 @@ button a {
     flex-direction: row;
 }
 
+
+#info1{
+    float: left;
+    width: 70%;
+ }
+
+ #info2{
+    padding: 40px;
+
+    
+}
+
+#folder1 {
+    background-color: #8DC2CE;
+    background-position: center;
+    border-radius: 15px;
+    height: 480px;
+    padding: 50px;
+    padding-top: 30px;
+    border-radius: 0 0 15px 15px;
+    text-align: center;
+
+
+    justify-content: center;
+    align-items: center;
+}
+
 #folder {
     background-color: #8DC2CE;
     background-position: center;
@@ -200,6 +222,7 @@ button a {
     padding: 50px;
     padding-top: 70px;
     border-radius: 0 0 15px 15px;
+    text-align: center;
 
 
     justify-content: center;
@@ -269,7 +292,7 @@ select {
     font-size: 18px;
     padding: 0.5rem;
     width: 40%;
-    display: block;
+
 }
 
     /* The switch - the box around the slider */
