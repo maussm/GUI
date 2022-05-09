@@ -71,6 +71,7 @@ label {
     font-size: 18px;
     padding: 1rem 0 .25rem;
     text-transform: uppercase;
+    margin: 15px;
 
     display: block;
 }
@@ -190,13 +191,18 @@ button a {
 
 #info1{
     float: left;
-    width: 70%;
+    width: 50%;
  }
 
- #info2{
-    padding: 40px;
+#info2{
 
-    
+    padding: 40px;
+}
+
+#register{
+    float: left;
+    width: 50%;
+
 }
 
 #folder1 {
@@ -204,8 +210,8 @@ button a {
     background-position: center;
     border-radius: 15px;
     height: 480px;
-    padding: 50px;
-    padding-top: 30px;
+    padding: 100px;
+    padding-top: 40px;
     border-radius: 0 0 15px 15px;
     text-align: center;
 
@@ -213,6 +219,10 @@ button a {
     justify-content: center;
     align-items: center;
 }
+
+
+
+
 
 #folder {
     background-color: #8DC2CE;

@@ -20,7 +20,7 @@
 
         <nav>
             <h2><a th:href="'/reg_hand/'+${costCenterId}">Aktivitet</a></h2>
-            <h2 class="active"><a th:href="'/reg_del/'+${costCenterId}">Deltagare</a></h2>
+            <h2 class="active"><a th:href="'/reg_del/'+${costCenterId}">Ny Deltagare</a></h2>
         </nav>
 
         <section id="folder1">
@@ -42,7 +42,9 @@
                     <input type="text" id="language" name="language">
                     <label for="land">Land:</label>
                     <input type="text" id="land" name="land">
+                <section id="register">
                     <button>Registrera deltagare</button>
+                </section>
                 </section>
                 </form>
             </article>
