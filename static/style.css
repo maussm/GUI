@@ -18,6 +18,10 @@ input#antal{
     width: 50%;
 }
 
+img.ui-datepicker-trigger {
+    max-width: 20px;
+
+}
  
 
 #selected,  #chosen {
