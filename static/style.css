@@ -22,7 +22,22 @@ img.ui-datepicker-trigger {
     max-width: 20px;
 
 }
- 
+
+#button1{
+    border: 2px solid #298089;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 0.5rem;
+    width: 18%;
+    display: block;
+    float: right;
+    text-align: left;
+    position: relative;
+    position: absolute;
+    top: 20px;
+    right: 10px;
+
+}
 
 #selected,  #chosen {
     border: 2px solid #298089;
