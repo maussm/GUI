@@ -18,13 +18,13 @@
             <!--/*@thymesVar id="costCenterName" type="se.mau.webbserver.entity.cost_center.CostCenter"*/-->
             <span id="chosen" th:text="${costCenterName}"></span>
             <section id="button1">Dagsrapporter</section>
-            <section id="button1"><a href="foljaupp.html">Dagsrapporter</a></section>
+            <section id="button1"><a th:href="'/foljaupp/'+${costCenterId}">Dagsrapporter</a></section>
         </div>
 
         <nav>
-            <h2><a href="ankommande.html">Ankommande</a></h2>
-            <h2><a href="ankommande.html">Ny Deltagare</a></h2>
-            <h2 class="active"><a href="reg-handelse.html">Aktivitet</a></h2>
+            <h2><a th:href="'/ankommande/'+${costCenterId}">Ankommande</a></h2>
+            <h2><a th:href="'/reg-deltagare/'+${costCenterId}">Ny Deltagare</a></h2>
+            <h2 class="active"><a th:href="'/reg-handelse/'+${costCenterId}">Aktivitet</a></h2>
 
         </nav>
 
