@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="sv">
+<html lang="sv">
     <head>
         <meta charset="utf-8">
+        <title>Stockholms Stadsmission</title>
         <link href="/static/style.css" rel="stylesheet">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
-        <title>Stockholms Stadsmission: DIGGINS Rapporteringsverktyg</title>
     </head>
     <body>
 
@@ -19,19 +18,27 @@
             <span id="chosen" th:text="${costCenterName}"></span>
         </div>
 
-         <section id="jumbo">
+        <nav>
+
+            <h2 class="active"><a href="ankommande.html">Ankommande</a></h2>
+            <h2><a href="reg-deltagare.html">Ny Deltagare</a></h2>
+            <h2><a href="reg-handelse.html">Aktivitet</a></h2>
+        </nav>
+
+        <section id="folder1">
             <article>
-                <button><a href="reg-handelse.html">Registrera</a></button>
-                <button><a href="foljaupp.html">Statistik</a></button>
-                <div id="edit">
-                    <h2>Redigera</h2><img src="/static/edit.png" alt="edit-icon" id="edit-icon">
-                </div>
-                <div id="buttonside2side">
-                    <button><a href="#">Aktivitet</a></button>
-                    <button><a href="#">Deltagare</a></button>
-                </div>
+                <form>
+                    <section id="info1">
+                    <label for="UNO">Namn eller UNO-kod:</label>
+                    <input type="text" id="UNO" name="UNO">
+                    <label for="fname">Datum</label>
+                    <input type="text" id="fname" name="fname">
+                    <button>Ok</button>
+                </section>
+                </section>
+                </form>
             </article>
-         </section>
+        </section>
 
     </body>
 </html>
