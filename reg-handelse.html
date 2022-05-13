@@ -7,11 +7,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">'
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="/script.js" defer></script>
         <title>Stockholms Stadsmission: DIGGINS Rapporteringsverktyg</title>
     </head>
     <body>
-
         <div id="menu">
             <a href="/"><img src="/static/SSM_logga_utan_bakgrund.svg" alt="Stockholms Stadsmissions logga" id="ssm-logga"></a>
             <h1>DIGGINS</h1>
@@ -20,23 +21,16 @@
             <section id="button1">Dagsrapporter</section>
             <section id="button1"><a th:href="'/foljaupp/'+${costCenterId}">Dagsrapporter</a></section>
         </div>
-
         <nav>
             <h2><a th:href="'/ankommande/'+${costCenterId}">Ankommande</a></h2>
             <h2><a th:href="'/reg-deltagare/'+${costCenterId}">Ny Deltagare</a></h2>
             <h2 class="active"><a th:href="'/reg-handelse/'+${costCenterId}">Aktivitet</a></h2>
-
         </nav>
-
         <section id="folder">
             <article>
-                <form>
                     <label for="enhet-name">Enhetens benämning på händelsen:</label>
-                        <select id="aktivitet" name="aktivitet" form="aktivitetform">
-                        <option value="ex1">Exempel 1</option>
-                        <option value="ex2">Exempel 2</option>
-                        <option value="ex3">Exempel 3</option>
-                        <option value="ex4">Exempel 4</option>
+                        <select id="aktivitet" name="aktivitet" form="aktivitetform" th:ccId="${costCenterId}">
+                            <option th:each="alias: ${aliases}" th:value="${alias.activity.id}" th:text="${alias.id.definition}"></option>
                         </select>
                     <label for="antal">Antal deltagare:</label>
                     <input type="text" id="antal" name="antal">
@@ -45,8 +39,11 @@
                         <input type="checkbox">
                         <span class="slider round"></span>
                     </label>
-                    <button>Registrera händelse</button>
-                </form>
+                    <label>
+                        Datum
+                        <input type="text" id="occurrence_date">
+                    </label>
+                    <button onclick="postActivity()">Registrera händelse</button>
             </article>
         </section>
     </body>
