@@ -7,6 +7,9 @@ $( function() {
     });
   } );
 
+  function postArrival() {
+  }
+
   function postActivity() {
     let data = {
       "reported_date":    (new Date()),

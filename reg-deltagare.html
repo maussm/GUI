@@ -10,7 +10,6 @@
         <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
     </head>
     <body>
-
         <div id="menu">
             <a href="/"><img src="/static/SSM_logga_utan_bakgrund.svg" alt="Stockholms Stadsmissions logga" id="ssm-logga"></a>
             <h1>DIGGINS</h1>
@@ -18,13 +17,11 @@
             <span id="chosen" th:text="${costCenterName}"></span>
             <section id="button1"><a th:href="'/foljaupp/'+${costCenterId}">Dagsrapporter</a></section>
         </div>
-
         <nav>
             <h2><a th:href="'/ankommande/'+${costCenterId}">Ankommande</a></h2>
             <h2 class="active"><a th:href="'/reg-deltagare/'+${costCenterId}">Ny Deltagare</a></h2>
             <h2><a th:href="'/reg-handelse/'+${costCenterId}">Aktivitet</a></h2>
         </nav>
-
         <section id="folder1">
             <article>
                 <form>
@@ -51,6 +48,5 @@
                 </form>
             </article>
         </section>
-
     </body>
 </html>

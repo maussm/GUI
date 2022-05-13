@@ -13,6 +13,7 @@ function reg_hand() {
 }
 
 function postActivity() {
+
   let data = {
     "reported_date":    (new Date()),
     "occurrence_date":  $("#occurrence_date").value,
