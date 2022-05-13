@@ -21,7 +21,7 @@
         <form action="/ankommande" method="get" id="enhetsform">
             <section id="jumbo">
                 <article>
-                    <h2 class="title">Välj enhet:</h2>
+                    <h2 class="title">Välj din enhet:</h2>
                     <select id="selector" name="vald_enhet" form="enhetsform">
                         <option th:each="costCenter: ${costCenters}" th:value="${costCenter.id}" th:text="${costCenter.name}"></option>
                     </select>
