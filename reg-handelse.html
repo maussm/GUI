@@ -33,7 +33,8 @@
                             <option th:each="alias: ${aliases}" th:value="${alias.activity.id}" th:text="${alias.id.definition}"></option>
                         </select>
                     <label for="antal">Antal deltagare:</label>
-                    <input type="text" id="antal" name="antal">
+                    <input type="number" id="antal" name="antal"
+                           required min="1" max="50"/>
                     <label for="namnge">Namnge deltagare:</label>
                     <label class="switch">
                         <input type="checkbox">
@@ -41,7 +42,7 @@
                     </label>
                     <label>
                         Datum
-                        <input type="text" id="occurrence_date">
+                        <input type="date" id="occurrence_date">
                     </label>
                     <button onclick="postActivity()">Registrera händelse</button>
             </article>
