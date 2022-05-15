@@ -24,19 +24,19 @@
         </nav>
         <section id="folder1">
             <article>
-                <form>
+                <form onsubmit="return false;">
                     <section id="info1">
                     <label for="UNO">UNO-kod *</label>
                     <input type="text" id="UNO" name="UNO"
                            required minlength="2" maxlength="8"/>
                     <label for="fname">Förnamn *</label>
                     <input type="text" id="fname" name="fname"
-                           required minlength="2" maxlength="8"/>
+                           required minlength="2" maxlength="20"/>
                     <label for="lname">Efternamn *</label>
                     <input type="text" id="lname" name="lname"
-                           required minlength="2" maxlength="8"/>
+                           required minlength="2" maxlength="30"/>
                     <label for="birthyear">Födelseår(barn)</label>
-                    <input type="text" id="birthyear" name="birthyear">
+                    <input type="date" id="birthyear" name="birthyear">
                 </section>
                 <section id="info2">
                     <label for="language">Språk</label>
@@ -48,6 +48,16 @@
                 </section>
                 </section>
                 </form>
+                <script>
+                    var fname = document.getElementById("fname");
+                    fname.addEventListener("input", () => {
+                        if(fname.validity.tooLong || fname.validity.tooShort)
+                            fname.setCustomValidity("Name must be 2-8 characters"
+                            fname.reportValidity();
+                        } else {
+                            fname.setCustomValidity(""); }
+                        });
+                </script>
             </article>
         </section>
     </body>

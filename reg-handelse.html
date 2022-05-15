@@ -32,7 +32,7 @@
                         <select id="aktivitet" name="aktivitet" form="aktivitetform" th:ccId="${costCenterId}">
                             <option th:each="alias: ${aliases}" th:value="${alias.activity.id}" th:text="${alias.id.definition}"></option>
                         </select>
-                    <label for="antal">Antal deltagare</label>
+                    <label for="antal">Volym</label>
                     <input type="number" id="antal" name="antal"
                            required min="1" max="50"/>
                     <label for="namnge">Namnge deltagare</label>
@@ -42,7 +42,7 @@
                     </label>
                     <label>
                         Datum
-                        <input type="date" id="occurrence_date">
+                        <input type="date" id="occurrence_date" value="">
                     </label>
                     <button onclick="postActivity()">Registrera händelse</button>
             </article>
