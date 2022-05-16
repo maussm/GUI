@@ -7,9 +7,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">'
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
         <script src="/script.js" defer></script>
+        <script src="/static/ajax.js" defer></script>
         <title>Stockholms Stadsmission: DIGGINS Rapporteringsverktyg</title>
     </head>
     <body>
@@ -19,7 +20,7 @@
             <!--/*@thymesVar id="costCenterName" type="se.mau.webbserver.entity.cost_center.CostCenter"*/-->
             <span id="chosen" th:text="${costCenterName}"></span>
             <section id="button1">Dagsrapporter</section>
-            <section id="button1"><a th:href="'/foljaupp/'+${costCenterId}">Dagsrapporter</a></section>
+            <section id="button2"><a th:href="'/foljaupp/'+${costCenterId}">Dagsrapporter</a></section>
         </div>
         <nav>
             <h2><a th:href="'/ankommande/'+${costCenterId}">Ankommande</a></h2>
@@ -30,7 +31,7 @@
             <article>
                     <label for="enhet-name">Typ av Aktivitet</label>
                         <select id="aktivitet" name="aktivitet" form="aktivitetform" th:ccId="${costCenterId}">
-                            <option th:each="alias: ${aliases}" th:value="${alias.activity.id}" th:text="${alias.id.definition}"></option>
+                            <option th:each="alias: ${aliases}" th:value="${alias.activity.internalId}" th:text="${alias.id.definition}"></option>
                         </select>
                     <label for="antal">Volym</label>
                     <input type="number" id="antal" name="antal"
