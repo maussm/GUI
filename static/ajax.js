@@ -30,7 +30,7 @@ function postActivity() {
         datatype: "json",
         data: JSON.stringify(data),
         success: function(response) {
-            console.console.log(response);
+            console.log(response);
         },
         error: function (error) {
             console.log(error);
