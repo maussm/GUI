@@ -23,7 +23,8 @@ img.ui-datepicker-trigger {
 
 }
 
-#button1{
+#button1,
+#button2 {
     border: 2px solid #298089;
     border-radius: 5px;
     font-size: 18px;

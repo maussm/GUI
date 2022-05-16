@@ -1,37 +1,39 @@
-function reg_hand() {
-    let request = new XMLHttpRequest();
-    request.onreadystatechange = function() {
-        if(this.readyState === 4 && this.status === 200) {
-            alert("kaffe");
-        }
-    };
-
-    request.open("GET", '/api/cost_center/1');
-    let jsonData = {"name" : "Lokesh"};
-    request.send( JSON.stringify( jsonData ) );
-    request.send();
+function postArrival() {
 }
 
-function postActivity() {
 
-  let data = {
-    "reported_date":    (new Date()),
-    "occurrence_date":  $("#occurrence_date").value,
-    "cost_center":      $("#aktivitet").ccId,
-    "activity_id":      $("#aktivitet").value,
-    "participants":     $("#antal")
-  }
-  $.ajax({
-    type: "POST",
-    url: "http://localhost/api/activity",
-    contentType: "application/json; charset=utf-8",
-    datatype: "json",
-    data: JSON.stringify(data),
-    success: function(response) {
-      console.console.log(response);
-    },
-    error: function (error) {
-      console.log(error);
+
+function postActivity() {
+    Date.prototype.yyyymmdd = function() {
+      let mm = this.getMonth() + 1; // getMonth() is zero-based
+      let dd = this.getDate();
+
+      return [this.getFullYear(),
+              (mm>9 ? '' : '0') + mm,
+              (dd>9 ? '' : '0') + dd
+             ].join('-');
     };
-  });
+
+    let date = new Date();
+
+    let data = {
+        "reportedDate":    date.yyyymmdd(),
+        "occurrenceDate":  $("#occurrence_date").val(),
+        "costCenterId":      $("[ccid]").attr("ccid"),
+        "tkActivityId":      $("#aktivitet").val(),
+        "participants":     $("#antal").val()
+    }
+    $.ajax({
+        type: "POST",
+        url: "http://localhost/api/activity",
+        contentType: "application/json; charset=utf-8",
+        datatype: "json",
+        data: JSON.stringify(data),
+        success: function(response) {
+            console.console.log(response);
+        },
+        error: function (error) {
+            console.log(error);
+        }
+    });
 }
