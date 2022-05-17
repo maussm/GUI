@@ -1,6 +1,24 @@
 function postArrival() {
-}
+    let data = {
+        "participant":      $("#UNO").val,
+        "costCentedId":     $("[ccid]").attr("ccid"),
+        "date":             $("#date").val
+    }
 
+    $.ajax({
+        type: "POST",
+        url: "http://localhost/api/attendance",
+        contentType: "application/json; charset=utf-8",
+        datatype: "json",
+        data: JSON.stringify(data),
+        success: function(response) {
+            console.log(response);
+        },
+        error: function(error) {
+            console.log(error);
+        }
+    });
+}
 
 
 function postActivity() {
@@ -32,7 +50,7 @@ function postActivity() {
         success: function(response) {
             console.log(response);
         },
-        error: function (error) {
+        error: function(error) {
             console.log(error);
         }
     });
