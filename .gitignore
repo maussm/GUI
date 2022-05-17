@@ -52,4 +52,6 @@ Temporary Items
 
 # Support for Project snippet scope
 
+.idea/*
+
 # End of https://www.toptal.com/developers/gitignore/api/macos,visualstudiocode
