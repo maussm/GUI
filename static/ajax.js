@@ -1,8 +1,8 @@
 function postArrival() {
     let data = {
-        "participant":      $("#UNO").val,
+        "participant":      $("#UNO").val(),
         "costCentedId":     $("[ccid]").attr("ccid"),
-        "date":             $("#date").val
+        "date":             $("#date").val()
     }
 
     $.ajax({
@@ -19,7 +19,29 @@ function postArrival() {
         }
     });
 }
-
+postNewParticipant() {
+    let data = {
+    "unoCode"           = $("#UNO").val(),
+    "firstName"         = $("#fname").val(),
+    "lastName"          = $("#lname").val(),
+    "birthDate"         = $("#birthyear").val(),
+    "spokenLanguage"    = $("#language").val(),
+    "country"           = $("#land").val(),
+    }
+    $.ajax({
+        type: "POST",
+        url: "http://localhost/api/participant",
+        contentType: "application/json; charset=utf-8",
+        datatype: "json",
+        data: JSON.stringify(data),
+        success: function(response) {
+            console.log(response);
+        },
+        error: function (error) {
+            console.log(error);
+        }
+    });
+}
 
 function postActivity() {
     Date.prototype.yyyymmdd = function() {
