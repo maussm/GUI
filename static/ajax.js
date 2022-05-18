@@ -19,14 +19,14 @@ function postArrival() {
         }
     });
 }
-postNewParticipant() {
+function postNewParticipant() {
     let data = {
-    "unoCode"           = $("#UNO").val(),
-    "firstName"         = $("#fname").val(),
-    "lastName"          = $("#lname").val(),
-    "birthDate"         = $("#birthyear").val(),
-    "spokenLanguage"    = $("#language").val(),
-    "country"           = $("#land").val(),
+    "unoCode"           : $("#UNO").val(),
+    "firstName"         : $("#fname").val(),
+    "lastName"          : $("#lname").val(),
+    "birthDate"         : $("#birthyear").val(),
+    "spokenLanguage"    : $("#language").val(),
+    "country"           : $("#land").val(),
     }
     $.ajax({
         type: "POST",
