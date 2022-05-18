@@ -236,6 +236,7 @@ button a {
 #register{
 
     width: 50%;
+    align-items: center;
 
 }
 
@@ -244,7 +245,7 @@ button a {
     background-position: center;
     border-radius: 15px;
     height: 480px;
-    padding: 100px;
+    padding: 400px;
     padding-top: 50px;
     border-radius: 0 0 15px 15px;
     text-align: center;
