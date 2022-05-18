@@ -35,7 +35,7 @@ img.ui-datepicker-trigger {
     text-align: center;
     position: relative;
     position: absolute;
-    top: 20px;
+    top: 40px;
     right: 10px;
 
 
@@ -52,8 +52,8 @@ img.ui-datepicker-trigger {
     text-align: left;
     position: relative;
     position: absolute;
-    top: 70px;
-    right: 40px
+    top: 100px;
+    right: 10px;
 }
 
 #selector {
