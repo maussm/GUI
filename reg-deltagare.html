@@ -30,15 +30,21 @@
             <article>
                 <form onsubmit="return false;">
                     <section id="info1">
-                    <label for="UNO">UNO-kod *</label>
+                    <label for="UNO">UNO-kod*</label>
                     <input type="text" id="UNO" name="UNO"
-                           required minlength="2" maxlength="8"/>
-                    <label for="fname">Förnamn *</label>
+                           required minlength="2" maxlength="8" placeholder=""
+                           oninvalid="this.setCustomValidity('Ange UNO-Kod')"
+                           oninput="this.setCustomValidity('')"/>
+                    <label for="fname">Förnamn*</label>
                     <input type="text" id="fname" name="fname"
-                           required minlength="2" maxlength="20"/>
-                    <label for="lname">Efternamn *</label>
+                           required minlength="2" maxlength="40" placeholder=""
+                           oninvalid="this.setCustomValidity('Ange Förnamn')"
+                           oninput="this.setCustomValidity('')"/>
+                    <label for="lname">Efternamn*</label>
                     <input type="text" id="lname" name="lname"
-                           required minlength="2" maxlength="30"/>
+                           required minlength="2" maxlength="30" placeholder=""
+                           oninvalid="this.setCustomValidity('Ange Efternamn')"
+                           oninput="this.setCustomValidity('')"/>
                 </section>
                 <section id="info3">
                     <label for="birthyear">Födelseår(barn)</label>

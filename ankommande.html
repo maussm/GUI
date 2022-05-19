@@ -34,9 +34,13 @@
                 <form>
                     <section id="info1">
                     <label for="UNO">Sök (Namn eller UNO-Kod)</label>
-                    <input type="text" id="UNO" name="UNO" required>
+                    <input type="text" id="UNO" name="UNO" required placeholder=""
+                    oninvalid="this.setCustomValidity('Ange Ankommande Person')"
+                    oninput="this.setCustomValidity('')"/>
                     <label for="date">Datum</label>
-                    <input type="date" id="date" name="date" required>
+                    <input type="date" id="date" name="date" required placeholder=""
+                    oninvalid="this.setCustomValidity('Ange Datum')"
+                    oninput="this.setCustomValidity('')"/>
                     <button onclick="postArrival()">Registrera ankommande</button>
                 </section>
                 </form>
