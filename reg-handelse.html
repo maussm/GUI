@@ -18,12 +18,12 @@
             <a href="/"><img src="/static/SSM_logga_utan_bakgrund.svg" alt="Stockholms Stadsmissions logga" id="ssm-logga"></a>
             <h1>DIGGINS</h1>
             <span id="chosen" th:text="${costCenterName}">Kvarnbytorp</span>
-            <a th:href="'/foljaupp/'+${costCenterId}"><section>Dagsrapporter</section></a>
+            <a th:href="'/foljaupp/'+${costCenterId}"><section class="button-blue">Dagsrapporter</section></a>
         </div>
         <nav>
-            <h2><a th:href="'/ankommande/'+${costCenterId}">Ankommande</a></h2>
-            <h2><a th:href="'/reg-deltagare/'+${costCenterId}">Ny Deltagare</a></h2>
-            <h2 class="active"><a th:href="'/reg-handelse/'+${costCenterId}">Aktivitet</a></h2>
+            <h2 class="button-blue"><a th:href="'/ankommande/'+${costCenterId}">Ankommande</a></h2>
+            <h2 class="button-blue"><a th:href="'/reg-deltagare/'+${costCenterId}">Ny Deltagare</a></h2>
+            <h2 class="button-blue active"><a th:href="'/reg-handelse/'+${costCenterId}">Aktivitet</a></h2>
         </nav>
         <section id="folder">
             <article>
