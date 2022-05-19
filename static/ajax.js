@@ -1,7 +1,7 @@
 function postArrival() {
     let data = {
-        "participant":      $("#UNO").val(),
-        "costCentedId":     $("[ccid]").attr("ccid"),
+        "participant_id":      $("#UNO").val(),
+        "cost_center_id":     $("[ccid]").attr("ccid"),
         "date":             $("#date").val()
     }
 
