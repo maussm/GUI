@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="sv" xmlns:th="http://www.w3.org/1999/xhtml">
     <head>
         <meta charset="utf-8">
         <title>Stockholms Stadsmission</title>
@@ -18,31 +18,35 @@
         <div id="menu">
             <a href="/"><img src="/static/SSM_logga_utan_bakgrund.svg" alt="Stockholms Stadsmissions logga" id="ssm-logga"></a>
             <h1>DIGGINS</h1>
-            <!--/*@thymesVar id="costCenterName" type="se.mau.webbserver.entity.cost_center.CostCenter"*/-->
             <span id="chosen" th:text="${costCenterName}"></span>
-            <section id="button1"><a th:href="'/foljaupp/'+${costCenterId}">Dagsrapporter</a></section>
+            <a th:href="'/foljaupp/'+${costCenterId}"><section class="button-blue">Dagsrapporter</section></a>
         </div>
 
         <nav>
-            <h2 class="active"><a th:href="'/ankommande/'+${costCenterId}">Ankommande</a></h2>
-            <h2><a th:href="'/reg-deltagare/'+${costCenterId}">Ny Deltagare</a></h2>
-            <h2><a th:href="'/reg-handelse/'+${costCenterId}">Aktivitet</a></h2>
+            <h2 class="button-blue active"><a th:href="'/ankommande/'+${costCenterId}">Ankommande</a></h2>
+            <h2 class="button-blue"><a th:href="'/reg-deltagare/'+${costCenterId}">Ny Deltagare</a></h2>
+            <h2 class="button-blue"><a th:href="'/reg-handelse/'+${costCenterId}">Aktivitet</a></h2>
         </nav>
 
-        <section id="folder1">
+        <section class="folder">
             <article>
                 <form>
-                    <section id="info1">
-                    <label for="UNO">Sök (Namn eller UNO-Kod)</label>
-                    <input type="text" id="UNO" name="UNO" required placeholder=""
-                    oninvalid="this.setCustomValidity('Ange Ankommande Person')"
-                    oninput="this.setCustomValidity('')"/>
-                    <label for="date">Datum</label>
-                    <input type="date" id="date" name="date" required placeholder=""
-                    oninvalid="this.setCustomValidity('Ange Datum')"
-                    oninput="this.setCustomValidity('')"/>
-                    <button onclick="postArrival()">Registrera ankommande</button>
-                </section>
+                    <section class="single-column">
+                        <label for="search">Sök (Namn eller UNO-Kod)</label>
+                        <span class="container">
+                            <input class="flex-grow" type="text" placeholder="Search..." id="search">
+                            <span class="button-orange button-delete" id="deletebutton"></span>
+                        </span>
+                        <div class="container" id="buttoncontainer"></div>
+                        <div class="container" id="chosencontainer"></div>
+
+
+
+<!--                        <input type="text" id="UNO" name="UNO" required placeholder="" oninvalid="this.setCustomValidity('Ange Ankommande Person')" oninput="this.setCustomValidity('')"/>-->
+                        <label for="date">Datum</label>
+                        <input type="date" id="date" name="date" required placeholder="" oninvalid="this.setCustomValidity('Ange Datum')" oninput="this.setCustomValidity('')"/>
+                        <button class="button-orange" onclick="postArrival()">Registrera ankommande</button>
+                    </section>
                 </form>
             </article>
         </section>

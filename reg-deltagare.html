@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="sv" xmlns:th="http://www.w3.org/1999/xhtml">
     <head>
         <meta charset="utf-8">
         <title>Stockholms Stadsmission</title>
@@ -31,20 +31,11 @@
                 <form onsubmit="return false;">
                     <section id="info1">
                     <label for="UNO">UNO-kod*</label>
-                    <input type="text" id="UNO" name="UNO"
-                           required minlength="2" maxlength="8" placeholder=""
-                           oninvalid="this.setCustomValidity('Ange UNO-Kod')"
-                           oninput="this.setCustomValidity('')"/>
+                    <input type="text" id="UNO" name="UNO" required minlength="2" maxlength="8" placeholder="" oninvalid="this.setCustomValidity('Ange UNO-Kod')" oninput="this.setCustomValidity('')"/>
                     <label for="fname">Förnamn*</label>
-                    <input type="text" id="fname" name="fname"
-                           required minlength="2" maxlength="40" placeholder=""
-                           oninvalid="this.setCustomValidity('Ange Förnamn')"
-                           oninput="this.setCustomValidity('')"/>
+                    <input type="text" id="fname" name="fname" required minlength="2" maxlength="40" placeholder="" oninvalid="this.setCustomValidity('Ange Förnamn')" oninput="this.setCustomValidity('')"/>
                     <label for="lname">Efternamn*</label>
-                    <input type="text" id="lname" name="lname"
-                           required minlength="2" maxlength="30" placeholder=""
-                           oninvalid="this.setCustomValidity('Ange Efternamn')"
-                           oninput="this.setCustomValidity('')"/>
+                    <input type="text" id="lname" name="lname" required minlength="2" maxlength="30" placeholder="" oninvalid="this.setCustomValidity('Ange Efternamn')" oninput="this.setCustomValidity('')"/>
                 </section>
                 <section id="info3">
                     <label for="birthyear">Födelseår(barn)</label>
@@ -197,23 +188,13 @@
                         <option value="yo">Yoruba - Èdè Yorùbá</option>
                         <option value="zu">Zulu - isiZulu</option>
                     </select>
-                    
-                    
+
+
                 <section id="register">
-                    <button onclick="postNewParticipant()">Registrera deltagare</button>
+                    <button class="button-orange" onclick="postNewParticipant()">Registrera deltagare</button>
                 </section>
                 </section>
                 </form>
-                <script>
-                    var fname = document.getElementById("fname");
-                    fname.addEventListener("input", () => {
-                        if(fname.validity.tooLong || fname.validity.tooShort)
-                            fname.setCustomValidity("Name must be 2-8 characters"
-                            fname.reportValidity();
-                        } else {
-                            fname.setCustomValidity(""); }
-                        });
-                </script>
                 <script>
                     Date.prototype.yyyymmdd = function() {
                     let mm = this.getMonth() + 1; // getMonth() is zero-based

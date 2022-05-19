@@ -8,6 +8,47 @@
     font-style: normal;
     user-select: none;
 }
+
+@font-face{
+    font-family:'FontAwesome';
+    src:url('/static/fonts/fontawesome-webfont.eot');
+    src:url('/static/fonts/fontawesome-webfont.eot') format('embedded-opentype'),
+    url('/static/fonts/fontawesome-webfont.woff') format('woff'),
+    url('/static/fonts/fontawesome-webfont.ttf') format('truetype'),
+    url('/static/fonts/fontawesome-webfont.svg') format('svg');
+    font-weight:normal;
+    font-style:normal
+}
+
+#jumbo {
+    background-image: url(/static/Secondhand.jpeg);
+    background-position: center;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #666;
+    height: 480px;
+    /*margin-top: 180px;*/
+    padding: 70px 50px 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#jumbo > article {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 20px;
+    width: 50%;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+button {
+
+}
+
 .button-blue {
     background-color: #BADFE8;
     cursor: pointer;
@@ -28,6 +69,61 @@
     text-transform: uppercase;
 }
 
+.button-orange {
+    background: #F38649;
+    border: 0;
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 40px;
+    padding: 15px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.button-delete {
+    position: relative;
+    cursor: pointer;
+    color: #ECF0F1;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.1s;
+    padding: 0;
+    margin: 0 0 0 5px;
+    border: solid 1px #FFA36F;
+    box-shadow: 0 6px 0 #AF470D;
+    top: -4px;
+}
+
+.button-delete:active {
+    top: 4px;
+}
+
+.button-delete::before {
+    font-family: FontAwesome;
+    content: "\f112";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: normal;
+    color: #ffffff;
+    text-decoration: inherit;
+}
+
+
+
+button-orange {
+
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.flex-grow {
+    flex-grow: 1;
+}
+
 h1 {
     color: #000000;
     font-size: 64px;
@@ -41,6 +137,7 @@ h1 {
     grid-auto-columns: 1fr;
     padding: 10px;
     grid-gap: 5px;
+    min-height: 123px;
 }
 
 #menu a {
@@ -48,7 +145,7 @@ h1 {
 }
 
 #menu a:first-child {
-    grid-area: l1/l1/l2/l2;
+    grid-area: l1 / l1 / l2 / l2;
     align-self: center;
 }
 
@@ -58,7 +155,7 @@ h1 {
 }
 
 #menu h1 {
-    grid-area: d1/d1/d2/d2;
+    grid-area: d1 / d1 / d2 / d2;
     justify-self: center;
     align-self: center;
 }
@@ -121,6 +218,28 @@ form section {
     flex-flow: column;
 }
 
+
+.folder {
+    background-color: #8DC2CE;
+    background-position: center;
+    height: 480px;
+    padding-top: 50px;
+    border-radius: 0 0 15px 15px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.single-column {
+    display: grid;
+    grid-template-areas:
+        ".";
+    grid-gap: 4px;
+    justify-content: center;
+}
+
+
 #folder1 form {
     display: grid;
     grid-template-areas:
@@ -129,6 +248,33 @@ form section {
         ". .";
     grid-gap: 4px;
 }
+
+
+.clicked,
+.not-selected,
+.hidden {
+    display: none;
+}
+
+
+.container:not(:first-of-type) {
+    overflow-y: scroll;
+    width: 244px;
+    min-width: 244px;
+    margin-left: 3px;
+    padding: 12px;
+
+    border: 3px solid #0099BB;
+    border-radius: 9px;
+
+    flex-direction: column;
+}
+
+
+
+
+
+
 
 
 
@@ -214,6 +360,7 @@ label {
     display: block;
 }
 
+/*conflict*/
 p {
    width: 70%; 
    margin: auto;
@@ -224,37 +371,14 @@ p1{
   font-family: "Helvetica";
   margin: -600%;
 }
+/*conflict*/
 
 .title,
 .selector {
-    margin: 10px 0px;
+    margin: 10px 0;
 }
 
-#jumbo {
-    background-image: url(Secondhand.jpeg);
-    background-position: center;
-    border-radius: 15px;
-    box-shadow: 0 0 10px #666;
-    height: 480px;
-    margin-top: 180px;
-    padding: 50px;
-    padding-top: 70px;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#jumbo > article {
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 15px;
-    padding: 20px;
-    width: 50%;
-
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
 
 #historik-bakgrund {
     background-color: #8DC2CE;
@@ -280,21 +404,6 @@ p1{
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-button {
-    background: #F38649;
-    border: 0;
-    border-radius: 20px;
-    cursor: pointer;
-    margin: 40px;
-    padding: 15px;
-    text-transform: uppercase;
-    width: auto;
-    width: -webkit-fill-available;
-    text-align: center;
-
-
 }
 
 button a {
