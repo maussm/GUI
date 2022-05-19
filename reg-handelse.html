@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="sv" xmlns:th="http://www.w3.org/1999/xhtml">
     <head>
         <meta charset="utf-8">
         <link href="/static/style.css" rel="stylesheet">
@@ -17,10 +17,8 @@
         <div id="menu">
             <a href="/"><img src="/static/SSM_logga_utan_bakgrund.svg" alt="Stockholms Stadsmissions logga" id="ssm-logga"></a>
             <h1>DIGGINS</h1>
-            <!--/*@thymesVar id="costCenterName" type="se.mau.webbserver.entity.cost_center.CostCenter"*/-->
-            <span id="chosen" th:text="${costCenterName}"></span>
-            <section id="button1">Dagsrapporter</section>
-            <section id="button2"><a th:href="'/foljaupp/'+${costCenterId}">Dagsrapporter</a></section>
+            <span id="chosen" th:text="${costCenterName}">Kvarnbytorp</span>
+            <a th:href="'/foljaupp/'+${costCenterId}"><section>Dagsrapporter</section></a>
         </div>
         <nav>
             <h2><a th:href="'/ankommande/'+${costCenterId}">Ankommande</a></h2>
