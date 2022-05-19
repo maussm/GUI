@@ -214,9 +214,16 @@ label {
     display: block;
 }
 
+p {
+   width: 70%; 
+   margin: auto;
+   align-items: right;
+}
 
-
-
+p1{
+  font-family: "Helvetica";
+  margin: -600%;
+}
 
 .title,
 .selector {
