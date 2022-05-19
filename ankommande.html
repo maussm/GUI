@@ -14,11 +14,10 @@
         <script src="/static/ajax.js" defer></script>
     </head>
     <body>
-
         <div id="menu">
             <a href="/"><img src="/static/SSM_logga_utan_bakgrund.svg" alt="Stockholms Stadsmissions logga" id="ssm-logga"></a>
             <h1>DIGGINS</h1>
-            <span id="chosen" th:text="${costCenterName}"></span>
+            <span class="grey" id="chosen" th:text="${costCenterName}"></span>
             <a th:href="'/foljaupp/'+${costCenterId}"><section class="button-blue">Dagsrapporter</section></a>
         </div>
 
@@ -30,22 +29,25 @@
 
         <section class="folder">
             <article>
-                <form>
-                    <section class="single-column">
-                        <label for="search">Sök (Namn eller UNO-Kod)</label>
-                        <span class="container">
-                            <input class="flex-grow" type="text" placeholder="Search..." id="search">
-                            <span class="button-orange button-delete" id="deletebutton"></span>
-                        </span>
-                        <div class="container" id="buttoncontainer"></div>
-                        <div class="container" id="chosencontainer"></div>
-
-
-
-<!--                        <input type="text" id="UNO" name="UNO" required placeholder="" oninvalid="this.setCustomValidity('Ange Ankommande Person')" oninput="this.setCustomValidity('')"/>-->
+                <form class="grid double-column grid-column-05fr">
+                    <section class="grid single-column align-start">
+<!--                    <input type="text" id="UNO" name="UNO" required placeholder="" oninvalid="this.setCustomValidity('Ange Ankommande Person')" oninput="this.setCustomValidity('')"/>-->
                         <label for="date">Datum</label>
                         <input type="date" id="date" name="date" required placeholder="" oninvalid="this.setCustomValidity('Ange Datum')" oninput="this.setCustomValidity('')"/>
                         <button class="button-orange" onclick="postArrival()">Registrera ankommande</button>
+                    </section>
+                    <section class="grid single-column">
+                        <label for="search">Sök (Namn eller UNO-Kod)</label>
+                        <span class="container">
+                            <input class="flex-grow" type="text" placeholder="Sök för att filtrera..." id="search" required>
+                            <span class="button-orange button-delete" id="deletebutton"></span>
+                        </span>
+                        <div class="grid double-column">
+                            <span>Personer</span>
+                            <span>Valda</span>
+                            <span class="container grey" id="buttoncontainer"></span>
+                            <span class="container grey" id="chosencontainer"></span>
+                        </div>
                     </section>
                 </form>
             </article>

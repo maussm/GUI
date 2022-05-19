@@ -20,6 +20,23 @@
     font-style:normal
 }
 
+label {
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 1rem 0 .25rem;
+    text-transform: uppercase;
+    margin: 15px;
+}
+
+select {
+    border: 2px solid #298089;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 0.5rem;
+    width: 40%;
+}
+
+
 #jumbo {
     background-image: url(/static/Secondhand.jpeg);
     background-position: center;
@@ -43,10 +60,6 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-}
-
-button {
-
 }
 
 .button-blue {
@@ -109,19 +122,51 @@ button {
     text-decoration: inherit;
 }
 
-
-
-button-orange {
-
-}
-
 .container {
     display: flex;
     align-items: center;
 }
 
+.grid {
+    display: grid;
+    grid-gap: 4px;
+    justify-content: center;
+}
+
+.grid > * {
+    justify-self: center;
+}
+
+.single-column {
+    grid-template-areas:
+        ".";
+}
+
+.double-column {
+    grid-template-areas:
+        ". .";
+}
+
+.grid-column-05fr {
+    grid-template-columns: 0.5fr;
+}
+
+.align-start {
+    align-content: start;
+}
+
+.clicked,
+.not-selected,
+.hidden {
+    display: none;
+}
+
 .flex-grow {
     flex-grow: 1;
+}
+
+.grey {
+    background: #C4C4C4;
 }
 
 h1 {
@@ -163,7 +208,6 @@ h1 {
 #menu span {
     grid-area: namn;
     justify-self: right;
-    background: #C4C4C4;
     padding: 5px;
 }
 
@@ -185,7 +229,6 @@ h1 {
 }
 
 nav {
-    /*margin-top: 0px;*/
     display: flex;
     flex-flow: row;
     justify-content: center;
@@ -198,10 +241,6 @@ nav h2 {
     border-radius: 35px 35px 0 0;
 }
 
-/*nav h2.active:hover {*/
-/*    background: #8cbec5 ;*/
-/*}*/
-
 nav h2 a {
     align-self: center;
     margin: 20px;
@@ -213,66 +252,123 @@ nav h2 a:hover {
     padding: 20px;
 }
 
-form section {
-    display: flex;
-    flex-flow: column;
+#buttoncontainer,
+#chosencontainer{
+    overflow-y: scroll;
+    margin-left: 3px;
+    padding: 12px;
+    border-radius: 9px;
+    flex-direction: column;
+    width: 300px;
+    height: 500px;
 }
 
+#buttoncontainer .button-orange,
+#chosencontainer .button-orange {
+    padding: 5px;
+    margin: 5px;
+    width: 100%;
+}
+
+input,
+textarea {
+    border: 2px solid #298089;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: .5rem;
+    text-align: center;
+    max-width: 350px;
+}
 
 .folder {
     background-color: #8DC2CE;
     background-position: center;
-    height: 480px;
+    /*height: 480px;*/
     padding-top: 50px;
+    margin-bottom: 20px;
     border-radius: 0 0 15px 15px;
     text-align: center;
     justify-content: center;
     align-items: center;
 }
 
-
-.single-column {
-    display: grid;
-    grid-template-areas:
-        ".";
-    grid-gap: 4px;
-    justify-content: center;
+.folder form > section:last-child:not(:nth-of-type(2)) {
+    grid-area: 2/1/2/span 2;
 }
 
-
-#folder1 form {
-    display: grid;
-    grid-template-areas:
-        ". ."
-        ". ."
-        ". .";
-    grid-gap: 4px;
+.folder form > section:last-child:nth-of-type(2) {
+    margin-bottom: 40px;
 }
 
-
-.clicked,
-.not-selected,
-.hidden {
-    display: none;
+.slider {
+    display: inline-block;
+    height: 20px;
+    width: 60px;
 }
 
-
-.container:not(:first-of-type) {
-    overflow-y: scroll;
-    width: 244px;
-    min-width: 244px;
-    margin-left: 3px;
-    padding: 12px;
-
-    border: 3px solid #0099BB;
-    border-radius: 9px;
-
-    flex-direction: column;
+.slider:before {
+    display: inline-block;
+    content: "";
+    border-radius: 50%;
+    background-color: white;*/
+    border-radius: 50%;
+    content: "";
+    height: 26px;
+    width: 26px;
+    transition: .4s;
 }
 
+.switch {
+    position: relative;
+    height: 34px;
+    margin: 8px 0px;
+    width: 60px;
+    display: inline-block;
+}
 
+/* Hide default HTML checkbox */
+.switch input {
+    height: 0;
+    opacity: 0;
+    width: 0;
+}
 
+/* The slider */
+.slider {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color: #ccc;
+    border-radius: 34px;
+    cursor: pointer;
+    transition: .4s;
+}
 
+.slider:before {
+    position: absolute;
+    bottom: 4px;
+    left: 4px;
+    background-color: white;
+    border-radius: 50%;
+    content: "";
+    height: 26px;
+    width: 26px;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
 
 
 
@@ -290,79 +386,59 @@ form section {
 
 
 #aktivitet {
-    width: 19%;
+    /*width: 19%;*/
 }
 
 input#antal{
-    width: 5%;
+    /*width: 5%;*/
 
 }
 
 #number {
-    width: 50%;
+    /*width: 50%;*/
 }
 
 img.ui-datepicker-trigger {
-    max-width: 20px;
+    /*max-width: 20px;*/
 
 }
 
 #selected {
-    border: 2px solid #298089;
-    border-radius: 5px;
-    font-size: 18px;
-    padding: 0.5rem;
-    width: 18%;
-    display: block;
-    float: right;
-    text-align: left;
-    position: relative;
-    position: absolute;
-    top: 100px;
-    right: 10px;
+    /*border: 2px solid #298089;*/
+    /*border-radius: 5px;*/
+    /*font-size: 18px;*/
+    /*padding: 0.5rem;*/
+    /*width: 18%;*/
+    /*display: block;*/
+    /*float: right;*/
+    /*text-align: left;*/
+    /*position: relative;*/
+    /*position: absolute;*/
+    /*top: 100px;*/
+    /*right: 10px;*/
 }
 
 #selector {
-    border: 2px solid #298089;
-    border-radius: 5px;
-    font-size: 18px;
-    padding: 0.5rem;
-    width: 50%;
-    display: block;
-}
-
-input,
-textarea {
-    border: 2px solid #298089;
-    border-radius: 5px;
-    font-size: 18px;
-    padding: .5rem;
-    text-align: center;
+    /*border: 2px solid #298089;*/
+    /*border-radius: 5px;*/
+    /*font-size: 18px;*/
+    /*padding: 0.5rem;*/
+    /*width: 50%;*/
+    /*display: block;*/
 }
 
 #calendar {
-    position: absolute;
-    left: 50%;
-    top: 50%;
+    /*position: absolute;*/
+    /*left: 50%;*/
+    /*top: 50%;*/
 
-    transform: translate(-50%, -50%);
-    width: 80%;
-}
-
-
-label {
-    border-radius: 5px;
-    font-size: 18px;
-    padding: 1rem 0 .25rem;
-    text-transform: uppercase;
-    margin: 15px;
-
-    display: block;
+    /*transform: translate(-50%, -50%);*/
+    /*width: 80%;*/
 }
 
 /*conflict*/
 p {
-   width: 70%; 
+   width: 70%;
    margin: auto;
    align-items: right;
 }
@@ -375,66 +451,66 @@ p1{
 
 .title,
 .selector {
-    margin: 10px 0;
+    /*margin: 10px 0;*/
 }
 
 
 
 #historik-bakgrund {
-    background-color: #8DC2CE;
-    background-position: center;
-    border-radius: 15px;
-    box-shadow: 0 0 10px #666;
-    height: 480px;
-    margin-top: 180px;
-    padding: 50px;
-    padding-top: 70px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    /*background-color: #8DC2CE;*/
+    /*background-position: center;*/
+    /*border-radius: 15px;*/
+    /*box-shadow: 0 0 10px #666;*/
+    /*height: 480px;*/
+    /*margin-top: 180px;*/
+    /*padding: 50px;*/
+    /*padding-top: 70px;*/
+    /**/
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
 }
 
 #historik-bakgrund > article {
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 15px;
-    padding: 20px;
-    width: 50%;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    /*background-color: rgba(255, 255, 255, 0.9);*/
+    /*border-radius: 15px;*/
+    /*padding: 20px;*/
+    /*width: 50%;*/
+    /**/
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*align-items: center;*/
 }
 
 button a {
-    color: #000000;
-    text-decoration: none;
-    text-transform: uppercase;
-    text-align: center;
-    width: 50%;
+    /*color: #000000;*/
+    /*text-decoration: none;*/
+    /*text-transform: uppercase;*/
+    /*text-align: center;*/
+    /*width: 50%;*/
 }
 
 #buttonside2side {
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    width: 50%;
+    /*display: flex;*/
+    /*flex-direction: row;*/
+    /*text-align: center;*/
+    /*width: 50%;*/
 }
 
 #folder1 {
-    background-color: #8DC2CE;
-    background-position: center;
-    border-radius: 15px;
-    height: 480px;
-    padding: 400px;
-    padding-top: 50px;
-    border-radius: 0 0 15px 15px;
-    text-align: center;
+    /*background-color: #8DC2CE;*/
+    /*background-position: center;*/
+    /*border-radius: 15px;*/
+    /*height: 480px;*/
+    /*padding: 400px;*/
+    /*padding-top: 50px;*/
+    /*border-radius: 0 0 15px 15px;*/
+    /*text-align: center;*/
 
 
 
-    justify-content: center;
-    align-items: center;
+    /*justify-content: center;*/
+    /*align-items: center;*/
 }
 
 
@@ -442,18 +518,18 @@ button a {
 
 
 #folder {
-    background-color: #8DC2CE;
-    background-position: center;
-    border-radius: 15px;
-
-    padding: 50px;
-    border-radius: 0 0 15px 15px;
-    text-align: center;
-
-
-    justify-content: center;
-    align-items: center;
-    height: 560px;
+    /*background-color: #8DC2CE;*/
+    /*background-position: center;*/
+    /*border-radius: 15px;*/
+    /**/
+    /*padding: 50px;*/
+    /*border-radius: 0 0 15px 15px;*/
+    /*text-align: center;*/
+    /**/
+    /**/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    /*height: 560px;*/
 }
 
 
@@ -461,83 +537,16 @@ button a {
 
 
 #edit-icon {
-    margin-left: 10px;
-    width: 30px;
+    /*margin-left: 10px;*/
+    /*width: 30px;*/
 }
 
 #edit {
-    margin: 10px 0px;
-
-    display: flex;
-    flex-direction: row;
+    /*margin: 10px 0px;*/
+    /**/
+    /*display: flex;*/
+    /*flex-direction: row;*/
 }
-
-select {
-    border: 2px solid #298089;
-    border-radius: 5px;
-    font-size: 18px;
-    padding: 0.5rem;
-    width: 40%;
-
-}
-
-    /* The switch - the box around the slider */
-    .switch {
-        position: relative;
-        height: 34px;
-        margin: 8px 0px;
-        width: 60px;
-
-        display: inline-block;
-      }
-
-      /* Hide default HTML checkbox */
-      .switch input {
-        height: 0;
-        opacity: 0;
-        width: 0;
-      }
-
-      /* The slider */
-      .slider {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        top: 0;
-        background-color: #ccc;
-        border-radius: 34px;
-        cursor: pointer;
-        transition: .4s;
-        -webkit-transition: .4s;
-      }
-
-      .slider:before {
-        position: absolute;
-        bottom: 4px;
-        left: 4px;
-        background-color: white;
-        border-radius: 50%;
-        content: "";
-        height: 26px;
-        width: 26px;
-        transition: .4s;
-        -webkit-transition: .4s;
-      }
-
-      input:checked + .slider {
-        background-color: #2196F3;
-      }
-
-      input:focus + .slider {
-        box-shadow: 0 0 1px #2196F3;
-      }
-
-      input:checked + .slider:before {
-        transform: translateX(26px);
-        -ms-transform: translateX(26px);
-        -webkit-transform: translateX(26px);
-      }
 
 .mobile-only {
     display: none;
@@ -546,9 +555,6 @@ select {
 
 
 
-#folder1 form > section:last-child {
-    grid-area: 2/1/2/span 2;
-}
 
 @media screen and (max-width: 850px) {
     #wrapper > main > figure {

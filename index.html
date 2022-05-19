@@ -26,7 +26,7 @@
                     <select aria-label="selector" id="selector" name="vald_enhet" form="enhetsform" required>
                         <option th:each="costCenter: ${costCenters}" th:value="${costCenter.id}" th:text="${costCenter.name}"></option>
                     </select>
-                    <button type="submit">OK</button>
+                    <button class="button-orange" type="submit">OK</button>
                 </article>
             </section>
         </form>
