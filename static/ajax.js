@@ -12,9 +12,7 @@ function postArrival() {
         let data = {
             "participant_id": ptags[0].dataset.id,
             "cost_center_id": ccid,
-            "date": date,
-            "first_name": ptags[0].dataset.fname,
-            "lst_name": ptags[0].dataset.lname
+            "date": date
         }
 
         $.ajax({
@@ -32,14 +30,15 @@ function postArrival() {
         });
     });
 }
+
 function postNewParticipant() {
     let data = {
-    "unoCode"           : $("#UNO").val(),
-    "firstName"         : $("#fname").val(),
-    "lastName"          : $("#lname").val(),
-    "birthDate"         : $("#birthyear").val(),
-    "spokenLanguage"    : $("#language").val(),
-    "country"           : $("#land").val(),
+        "unoCode"           : $("#UNO").val(),
+        "firstName"         : $("#fname").val(),
+        "lastName"          : $("#lname").val(),
+        "birthDate"         : $("#birthyear").val(),
+        "spokenLanguage"    : $("#country").val(),
+        "country"           : $("#languages").val(),
     }
     $.ajax({
         type: "POST",
