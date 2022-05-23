@@ -310,7 +310,7 @@ textarea {
 
 .slider {
     display: inline-block;
-    height: 20px;
+    height: 26px;
     width: 60px;
 }
 
@@ -319,8 +319,6 @@ textarea {
     content: "";
     border-radius: 50%;
     background-color: white;
-    border-radius: 50%;
-    content: "";
     height: 26px;
     width: 26px;
     transition: .4s;
@@ -328,10 +326,10 @@ textarea {
 
 .switch {
     position: relative;
-    height: 34px;
-    margin: 8px 0px;
-    width: 60px;
-    display: inline-block;
+    /*height: 34px;*/
+    /*margin: 8px 0px;*/
+    /*width: 60px;*/
+    /*display: inline-block;*/
 }
 
 /* Hide default HTML checkbox */
@@ -343,11 +341,11 @@ textarea {
 
 /* The slider */
 .slider {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    top: 0;
+    /*position: absolute;*/
+    /*bottom: 0;*/
+    /*left: 0;*/
+    /*right: 0;*/
+    /*top: 0;*/
     background-color: #ccc;
     border-radius: 34px;
     cursor: pointer;
@@ -355,9 +353,9 @@ textarea {
 }
 
 .slider:before {
-    position: absolute;
-    bottom: 4px;
-    left: 4px;
+    position: relative;
+    /*bottom: 4px;*/
+    left: -18px;
     background-color: white;
     border-radius: 50%;
     content: "";
@@ -375,7 +373,7 @@ input:focus + .slider {
 }
 
 input:checked + .slider:before {
-    transform: translateX(26px);
+    transform: translateX(35px);
 }
 
 
