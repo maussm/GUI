@@ -88,6 +88,11 @@ function postActivity() {
             console.log(error);
         }
     });
+
+    if(!$("#personer").hasClass("blur")) {
+        var ptags = document.querySelectorAll("#chosencontainer > p");
+
+    }
 }
 
 function getActivity(){

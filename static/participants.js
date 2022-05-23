@@ -66,3 +66,12 @@ $.ajax({
         console.log(error);
     }
 });
+
+
+function showOrHideParticipants(checkbox) {
+    if(checkbox.checked) {
+        $("#personer").removeClass("blur")
+    } else {
+        $("#personer").addClass("blur")
+    }
+}
