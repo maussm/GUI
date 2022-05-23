@@ -10,14 +10,14 @@
         <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
         <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
         <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-        <script src="/static/script.js" defer></script>
+<!--        <script src="/static/participants.js" defer></script>-->
         <script src="/static/ajax.js" defer></script>
     </head>
     <body>
         <div id="menu">
             <a href="/"><img src="/static/SSM_logga_utan_bakgrund.svg" alt="Stockholms Stadsmissions logga" id="ssm-logga"></a>
             <h1>DIGGINS</h1>
-            <span class="grey" id="chosen" th:text="${costCenterName}"></span>
+            <span class="grey" id="chosen" th:text="${costCenterName}" th:ccId="${costCenterId}"></span>
             <a th:href="'/foljaupp/'+${costCenterId}"><section class="button-blue">Dagsrapporter</section></a>
         </div>
         <nav>
@@ -30,11 +30,11 @@
                 <form class="grid double-column grid-column-05fr" onsubmit="return false;">
                     <section class="grid single-column">
                         <label for="UNO">UNO-kod*</label>
-                        <input id="UNO" type="text" name="UNO" required minlength="2" maxlength="8" placeholder="" oninvalid="this.setCustomValidity('Ange UNO-Kod')" oninput="this.setCustomValidity('')"/>
+                        <input id="UNO" type="text" name="UNO" required minlength="2" maxlength="8" placeholder="" oninvalid="this.setCustomValidity('Ange UNO-Kod (2-8 tecken)')" oninput="this.setCustomValidity('')"/>
                         <label for="fname">Förnamn*</label>
-                        <input id="fname" type="text" name="fname" required minlength="2" maxlength="40" placeholder="" oninvalid="this.setCustomValidity('Ange Förnamn')" oninput="this.setCustomValidity('')"/>
+                        <input id="fname" type="text" name="fname" required minlength="2" maxlength="40" placeholder="" oninvalid="this.setCustomValidity('Ange Förnamn (2-40 tecken)')" oninput="this.setCustomValidity('')"/>
                         <label for="lname">Efternamn*</label>
-                        <input id="lname" type="text" name="lname" required minlength="2" maxlength="30" placeholder="" oninvalid="this.setCustomValidity('Ange Efternamn')" oninput="this.setCustomValidity('')"/>
+                        <input id="lname" type="text" name="lname" required minlength="2" maxlength="30" placeholder="" oninvalid="this.setCustomValidity('Ange Efternamn (2-30 tecken)')" oninput="this.setCustomValidity('')"/>
                     </section>
                     <section class="grid single-column">
                         <label for="birthyear">Födelseår(barn)</label>

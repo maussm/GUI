@@ -1,22 +1,35 @@
 function postArrival() {
-    let data = {
-        "participant_id":      $("#UNO").val(),
-        "cost_center_id":     $("[ccid]").attr("ccid"),
-        "date":             $("#date").val()
+    let date = $("#date").val();
+    let ccid = $("[ccid]").attr("ccid");
+
+    let ptags = document.querySelectorAll("#chosencontainer > p:not(.hidden)")
+
+    if(ptags === null) {
+        return "null"
     }
 
-    $.ajax({
-        type: "POST",
-        url: "http://localhost/api/attendance",
-        contentType: "application/json; charset=utf-8",
-        datatype: "json",
-        data: JSON.stringify(data),
-        success: function(response) {
-            console.log(response);
-        },
-        error: function(error) {
-            console.log(error);
+    ptags.forEach(function(p) {
+        let data = {
+            "participant_id": ptags[0].dataset.id,
+            "cost_center_id": ccid,
+            "date": date,
+            "first_name": ptags[0].dataset.fname,
+            "lst_name": ptags[0].dataset.lname
         }
+
+        $.ajax({
+            type: "POST",
+            url: "/api/attendance",
+            contentType: "application/json; charset=utf-8",
+            datatype: "json",
+            data: JSON.stringify(data),
+            success: function(response) {
+                console.log(response);
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
     });
 }
 function postNewParticipant() {
@@ -30,7 +43,7 @@ function postNewParticipant() {
     }
     $.ajax({
         type: "POST",
-        url: "http://localhost/api/participant",
+        url: "/api/participant",
         contentType: "application/json; charset=utf-8",
         datatype: "json",
         data: JSON.stringify(data),
@@ -110,5 +123,4 @@ function getActivity(){
             console.log(error);
         }
     });
-
 }
