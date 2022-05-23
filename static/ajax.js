@@ -21,8 +21,8 @@ function postArrival() {
             contentType: "application/json; charset=utf-8",
             datatype: "json",
             data: JSON.stringify(data),
-            success: function(response) {
-                console.log(response);
+            success: function(alert) {
+                alert("Whoopee!🎉");
             },
             error: function(error) {
                 console.log(error);
@@ -46,8 +46,8 @@ function postNewParticipant() {
         contentType: "application/json; charset=utf-8",
         datatype: "json",
         data: JSON.stringify(data),
-        success: function(response) {
-            console.log(response);
+        success: function(alert) {
+            alert("Whoopee!🎉");
         },
         error: function (error) {
             console.log(error);
@@ -81,8 +81,8 @@ function postActivity() {
         contentType: "application/json; charset=utf-8",
         datatype: "json",
         data: JSON.stringify(data),
-        success: function(response) {
-            console.log(response);
+        success: function(alert) {
+            alert("Whoopee!🎉");
         },
         error: function (error) {
             console.log(error);
@@ -115,8 +115,9 @@ function getActivity(){
         contentType: "application/json; charset=utf-8",
         datatype: "json",
         data: JSON.stringify(data),
-        success: function(response) {
-            console.log(response);
+        success: function(alert) {
+            alert("Whoopee!🎉");
+
         },
         error: function (error) {
             console.log(error);
