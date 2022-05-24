@@ -27,7 +27,7 @@
         </nav>
         <section class="folder">
             <article>
-                <form class="grid double-column grid-column-05fr" onsubmit="return false;">
+                <form id="regdelagare" class="grid double-column grid-column-05fr" onsubmit="postNewParticipant(); return false;">
                     <section class="grid single-column">
                         <label for="UNO">UNO-kod*</label>
                         <input id="UNO" type="text" name="UNO" required minlength="2" maxlength="8" placeholder="" oninvalid="this.setCustomValidity('Ange UNO-Kod (2-8 tecken)')" oninput="this.setCustomValidity('')"/>
@@ -437,7 +437,7 @@
                         </select>
                     </section>
                     <section class="grid single-column">
-                        <button class="button-orange" onclick="postNewParticipant()">Registrera deltagare</button>
+                        <button form="regdelagare" class="button-orange">Registrera deltagare</button>
                     </section>
                 </form>
                 <script>

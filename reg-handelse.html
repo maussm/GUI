@@ -33,7 +33,7 @@
             </nav>
             <section class="folder">
                 <article>
-                    <form class="grid double-column grid-column-05fr" onsubmit="return false">
+                    <form id="reghendelse" class="grid double-column grid-column-05fr" onsubmit="postActivity();return false">
                         <section class="grid single-column">
                             <label for="aktivitet">Typ av Aktivitet*</label>
                             <select id="aktivitet" name="aktivitet">
@@ -55,7 +55,7 @@
                             <span class="container grey" id="chosencontainer"></span>
                         </section>
                         <section>
-                            <button class="button-orange" onclick="postActivity()">Registrera händelse</button>
+                            <button form="reghendelse" class="button-orange">Registrera händelse</button>
                         </section>
                     </form>
                 </article>
