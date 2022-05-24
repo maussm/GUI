@@ -39,6 +39,7 @@ select {
     font-size: 18px;
     padding: 0.5rem;
     width: 40%;
+    
 }
 
 
@@ -211,7 +212,7 @@ h1 {
 }
 
 #menu a:first-child img {
-    padding: 0 0 0 50px;
+
     width: 269px;
 }
 
@@ -566,7 +567,7 @@ tr:nth-child(2n) {
         top: 0px;
     }
     #menu a:first-child img {
-        width: 150px;
+        width: 130px;
     }
 
 
@@ -590,7 +591,7 @@ tr:nth-child(2n) {
     }
 
     div#menu {
-        padding: 40px;
+ 
         display: grid;
         grid-template-areas: 
         "a b"
@@ -600,9 +601,12 @@ tr:nth-child(2n) {
 
     div#menu > :nth-child(1) {
         grid-area: a;
+       
+
     }
     div#menu > :nth-child(2) {
         grid-area: d;
+        padding: 40px;
     }
     div#menu > :nth-child(3) {
         grid-area: b;
@@ -619,14 +623,20 @@ tr:nth-child(2n) {
         align-self: center
     }
 
+    #menu span, #menu section {
+        width: 200px;
+    }
 
-
+    #menu section {
+        padding: 10px;
+    }
     nav h2 {
         border-radius: 0px 0px 0px 0px;
     }
 
     select{
-        width: 100%;
+        width: 60%;
+        align-self: center;
     }
     #menu-btn:focus + #menu, #menu:hover {
         height: 205.44px;
