@@ -154,3 +154,37 @@ function getActivity(){
         }
     });
 }
+
+function getActivitiesPerDate() {
+    let date = $("#datepicker").val();
+    let ccid = $("#chosen").attr("ccid");
+
+
+    $.ajax({
+    type: "GET",
+    url: `/api/activity/cost_center_occurrence_date/${ccid}/${date}`,
+    contentType: "application/json; charset=utf-8",
+    datatype: "json",
+    success: function(response) {
+        response.forEach(function (val) {
+            $("#activity").find('tbody').append(
+                $('<tr>').append(
+                    $('<td>').text(val.id)
+                ).append(
+                    $('<td>').text(val.occurrenceDate)
+                ).append(
+                    $('<td>').text(val.reportedDate)
+                ).append(
+                    $('<td>').text(val.costCenter.name)
+                ).append(
+                    $('<td>').text(val.participants)
+                )
+            );
+        });
+    },
+    error: function (error) {
+        console.log(error);
+    }
+});
+
+}
