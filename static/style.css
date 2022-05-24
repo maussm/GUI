@@ -524,13 +524,15 @@ tr:nth-child(2n) {
 
     }
 
+    #aktivitet {
+        width: 60%;
+        align-self: center;
+    }
     form.grid.double-coulm.grid-column-05fr {
         flex-direction: column;
     }
 
-    div#menu {
 
-    }
 
     .grid{
         flex-direction: column;
@@ -563,6 +565,11 @@ tr:nth-child(2n) {
         right: 0px;
         top: 0px;
     }
+    #menu a:first-child img {
+        width: 150px;
+    }
+
+
 
     nav {
         display: block;
@@ -582,9 +589,37 @@ tr:nth-child(2n) {
 
     }
 
-    #buttoncontainer, #chosencontainer {
-        width: 100%;
+    div#menu {
+        padding: 40px;
+        display: grid;
+        grid-template-areas: 
+        "a b"
+        "a c"
+        "d d";
     }
+
+    div#menu > :nth-child(1) {
+        grid-area: a;
+    }
+    div#menu > :nth-child(2) {
+        grid-area: d;
+    }
+    div#menu > :nth-child(3) {
+        grid-area: b;
+    }
+    div#menu > :nth-child(4) {
+        grid-area: c;
+    }
+
+    .container {
+        align-self: center;
+    }
+
+    input, textarea {
+        align-self: center
+    }
+
+
 
     nav h2 {
         border-radius: 0px 0px 0px 0px;
