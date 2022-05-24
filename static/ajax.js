@@ -75,24 +75,42 @@ function postActivity() {
         "tkActivityId":      $("#aktivitet").val(),
         "participants":     $("#antal").val()
     }
+
     $.ajax({
         type: "POST",
         url: "http://localhost/api/activity",
         contentType: "application/json; charset=utf-8",
         datatype: "json",
         data: JSON.stringify(data),
-        success: function(alert) {
+        success: function(activityId) {
             alert("Whoopee!🎉");
+            if(!$("#personer").hasClass("blur")) {
+                let ptags = document.querySelectorAll("#chosencontainer > p:not(.hidden)");
+                    ptags.forEach( function(p){
+                        let personData = {
+                            "activity_id"     : activityId,
+                            "participant_id"  : p.dataset.id
+                        }
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/api/activity_contents",
+                            contentType: "application/json; charset=utf-8",
+                            datatype: "json",
+                            data:JSON.stringify(personData),
+                            success:function(alert) {
+                                alert("Whoopee!🎉");
+                            },
+                            error: function(error) {
+                                console.log(error);
+                            }
+                        });
+                    });
+                }
         },
         error: function (error) {
             console.log(error);
         }
     });
-
-    if(!$("#personer").hasClass("blur")) {
-        var ptags = document.querySelectorAll("#chosencontainer > p");
-
-    }
 }
 
 function getActivity(){
