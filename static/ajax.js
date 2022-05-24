@@ -21,7 +21,7 @@ function postArrival() {
             contentType: "application/json; charset=utf-8",
             datatype: "json",
             data: JSON.stringify(data),
-            success: function(alert) {
+            success: function() {
                 alert("Whoopee!🎉");
             },
             error: function(error) {
@@ -46,7 +46,7 @@ function postNewParticipant() {
         contentType: "application/json; charset=utf-8",
         datatype: "json",
         data: JSON.stringify(data),
-        success: function(alert) {
+        success: function() {
             alert("Whoopee!🎉");
         },
         error: function (error) {
