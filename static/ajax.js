@@ -157,6 +157,11 @@ function getActivity(){
 
 function getActivitiesPerDate() {
     let date = $("#datepicker").val();
+
+    if(date === null) {
+        return false;
+    }
+
     let ccid = $("#chosen").attr("ccid");
 
 
