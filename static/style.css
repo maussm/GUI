@@ -253,7 +253,7 @@ nav h2 {
 }
 
 nav h2 a {
-    align-self: center;
+    align-self:center;
     margin: 20px;
     text-decoration: none;
 }
@@ -395,17 +395,40 @@ input:checked + .slider:before {
 
 
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 925px) {
     #wrapper > main > figure {
         width: 48%;
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 925px) {
     #wrapper > header > nav {
         flex-direction: column;
     }
+    .folder {
+        flex-direction: column;
+    }
+    body{
+        flex-direction: column;	
+        line-height:1.5;
+        padding:30px 10px 0;
+        line-height: 25px;
 
+
+    }
+
+    form.grid.double-coulm.grid-column-05fr {
+        flex-direction: column;
+    }
+
+    div#menu {
+
+    }
+
+    .grid{
+        flex-direction: column;
+        display: flex;
+    }
     #menu {
         flex-direction: column;
         margin-left: 0px;
@@ -424,6 +447,9 @@ input:checked + .slider:before {
     .mobile-only {
         display: block;
     }
+    input,textarea {
+        max-width: initial;
+    }
 
     #menu-btn {
         position: fixed;
@@ -431,14 +457,38 @@ input:checked + .slider:before {
         top: 0px;
     }
 
-    #menu {
-        height: 0px;
-        overflow: hidden;
-        transition: 0.5s all;
+    nav {
+        display: block;
+        flex-flow: row;
+        justify-content: center;
     }
 
+    #menu {
+
+        overflow: hidden;
+        transition: 0.5s all;
+        flex-direction: column;
+        display: block;
+        width: 100%;
+        padding-bottom: 30px;
+        justify-content: center;
+
+    }
+
+    #buttoncontainer, #chosencontainer {
+        width: 100%;
+    }
+
+    nav h2 {
+        border-radius: 0px 0px 0px 0px;
+    }
+
+    select{
+        width: 100%;
+    }
     #menu-btn:focus + #menu, #menu:hover {
         height: 205.44px;
+        flex-direction: column;
     }
 
     #wrapper > main > figure {
