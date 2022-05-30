@@ -19,8 +19,8 @@ $.ajax({
 
         response.forEach(function(val) {
             let name = val.firstName + " " + val.lastName;
-            $main = $('<p class="button-orange">');
-            $sub = $('<p class="button-orange">');
+            $main = $('<p class="button-blue">');
+            $sub = $('<p class="button-blue">');
             $main.attr('data-id', val.id);
             $main.attr('data-name', name);
             $main.text(name);

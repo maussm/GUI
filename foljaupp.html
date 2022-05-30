@@ -16,51 +16,61 @@
         <script src="/static/ajax.js" defer></script>
     </head>
     <body class="blue">
+        <span id="messagebox" class="hidden">
+            <p></p>
+            <button class="button-blue" onclick="hide()">OK</button>
+        </span>
+        <div id="overlay">
+            <div id="menu">
+                <a href="/"><img src="/static/SSM_logga_utan_bakgrund.svg" alt="Stockholms Stadsmissions logga" id="ssm-logga"></a>
+                <h1>DIGGINS</h1>
+                <span class="grey" id="chosen" th:text="${costCenterName}" th:ccId="${costCenterId}"></span>
+            </div>
 
-        <div id="menu">
-            <a href="/"><img src="/static/SSM_logga_utan_bakgrund.svg" alt="Stockholms Stadsmissions logga" id="ssm-logga"></a>
-            <h1>DIGGINS</h1>
-            <span class="grey" id="chosen" th:text="${costCenterName}" th:ccId="${costCenterId}"></span>
-        </div>
+            <article class="grid double-column">
+                <section class="folder" id="historik-bakgrund">
+                    <p>Datum:</p>
+                    <input type="text" id="datepicker">
+                    <button class="button-orange" type="button" onclick="getActivitiesPerDate()">Ok</button>
+                </section>
 
-        <article class="grid double-column">
-            <section class="folder" id="historik-bakgrund">
-                <p>Datum:</p>
-                <input type="text" id="datepicker">
-                <button class="button-orange" type="button" onclick="getActivitiesPerDate()">Ok</button>
-            </section>
-
-            <section class="folder">
-                <p class="grey">SENASTE</p>
-                <div class="tableFixHead">
-                    <table id="activity">
-                        <thead>
-                            <tr>
+                <section class="folder">
+                    <p class="grey">SENASTE</p>
+                    <div class="tableFixHead">
+                        <table id="activity">
+                            <thead>
+                                <tr>
+                                    <th class="click"></th>
+                                    <th>Aktivtet</th>
+                                    <th>Datum</th>
+                                    <th>Rapporterat datum</th>
+                                    <th>Kostnadsställe</th>
+                                    <th>Antal deltagare</th>
+                                    <th>Antal deltagare (rapporterade)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tableFixHead hidden">
+                        <table id="activity_contents">
+                            <thead>
+                                <tr>
                                 <th>Aktivtet</th>
-                                <th>Datum</th>
-                                <th>Rapporterat datum</th>
-                                <th>Kostnadsställe</th>
-                                <th>Antal deltagare</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="tableFixHead">
-                    <table id="activity_contents">
-                        <thead>
-                            <tr>
-                            <th>Aktivtet</th>
-                            <th>Namn</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-        </article>
+                                <th>Namn</th>
+                                <th>UNO kod</th>
+                                <th>Land</th>
+                                <th>Språk</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </article>
+        </div>
         <script>
             Date.prototype.yyyymmdd = function() {
             let mm = this.getMonth() + 1; // getMonth() is zero-based
