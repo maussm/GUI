@@ -435,6 +435,10 @@ body > span:first-child {
     z-index: 1;
 }
 
+body > span:first-child > p {
+    text-align: center;
+}
+
 body > span:first-child > button {
     width: 50px;
     height: 30px;
@@ -520,7 +524,18 @@ tr:nth-child(2n) {
     font-size: 50px;
 }
 
+.disabled {
+    filter: blur(2px);
+}
 
+
+#jumbo .button-orange {
+    margin: 10px 40px 40px 40px;
+}
+
+#selector {
+    margin: 10px;
+}
 
 @media screen and (max-width: 925px) {
     #wrapper > main > figure {

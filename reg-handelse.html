@@ -12,6 +12,7 @@
         <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
         <script src="/static/participants.js" defer></script>
         <script src="/static/ajax.js" defer></script>
+        <script src="/static/reg-handelse.js" defer></script>
         <title>Stockholms Stadsmission: DIGGINS Rapporteringsverktyg</title>
     </head>
     <body>
@@ -40,7 +41,7 @@
                                 <option th:each="alias: ${aliases}" th:value="${alias.activity.internalId}" th:text="${alias.id.definition}"></option>
                             </select>
                             <label for="antal">Volym*</label>
-                            <input type="number" id="antal" name="antal" required min="1" max="50" placeholder="" oninvalid="this.setCustomValidity('Ange Volym (1-50)')" oninput="this.setCustomValidity('')"/>
+                            <input type="number" id="antal" name="antal" onchange="a(this)" required min="1" max="50" placeholder="" oninvalid="this.setCustomValidity('Ange Volym (1-50)')" oninput="this.setCustomValidity('')"/>
                             <label for="occurrence_date">Datum*</label>
                             <input type="date" id="occurrence_date" value="" required placeholder="" oninvalid="this.setCustomValidity('Ange Datum')" oninput="this.setCustomValidity('')"/>
                             <label class="switch">Namnge deltagare

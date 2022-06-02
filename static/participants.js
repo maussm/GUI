@@ -33,8 +33,14 @@ $.ajax({
 
 
             $main.click(function() {
-                $(this).toggleClass('hidden');
-                $(`#chosencontainer > p[data-id=${val.id}]`).toggleClass('hidden');
+                if(document.getElementById("antal").valueAsNumber > $("#chosencontainer > p:not(.hidden)").length) {
+                    $(this).toggleClass('hidden');
+                    $(`#chosencontainer > p[data-id=${val.id}]`).toggleClass('hidden');
+                } else {
+                    $("#messagebox > p").text("Du kan inte lägga fler personer än volym.")
+                    $("#messagebox").toggleClass("hidden");
+                    $("#overlay").toggleClass("overlay");
+                }
             });
 
             $sub.click(function() {
