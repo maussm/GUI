@@ -27,19 +27,21 @@ $.ajax({
 
             $sub.attr('data-id', val.id);
             $sub.text(name);
-            // $sub.attr('data-fname', val.firstName);
-            // $sub.attr('data-lname', val.lastName);
             $sub.addClass('hidden');
 
-
             $main.click(function() {
-                if(document.getElementById("antal").valueAsNumber > $("#chosencontainer > p:not(.hidden)").length) {
+                if(document.getElementById("antal")) {
+                    if(document.getElementById("antal").valueAsNumber > $("#chosencontainer > p:not(.hidden)").length) {
+                        $(this).toggleClass('hidden');
+                        $(`#chosencontainer > p[data-id=${val.id}]`).toggleClass('hidden');
+                    } else {
+                        $("#messagebox > p").text("Du kan inte lägga fler personer än volym.")
+                        $("#messagebox").toggleClass("hidden");
+                        $("#overlay").toggleClass("overlay");
+                    }
+                } else {
                     $(this).toggleClass('hidden');
                     $(`#chosencontainer > p[data-id=${val.id}]`).toggleClass('hidden');
-                } else {
-                    $("#messagebox > p").text("Du kan inte lägga fler personer än volym.")
-                    $("#messagebox").toggleClass("hidden");
-                    $("#overlay").toggleClass("overlay");
                 }
             });
 
