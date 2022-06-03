@@ -1,3 +1,4 @@
+// Hämtar alla deltagare via REST API.
 $.ajax({
     type: "GET",
     url: "/api/participant",
@@ -5,6 +6,7 @@ $.ajax({
     datatype: "json",
     success: function(response) {
 
+        // Sorterar namnen i bokstavsordning.
         response.sort(function(a, b) {
             let aname = a.firstName + " " + a.lastName;
             let bname = b.firstName + " " + b.lastName;
@@ -17,10 +19,11 @@ $.ajax({
             return 0;
         });
 
+        // Bygger upp knapparna för varje person baserat på datan som hämtas.
         response.forEach(function(val) {
             let name = val.firstName + " " + val.lastName;
-            $main = $('<p class="button-blue">');
-            $sub = $('<p class="button-blue">');
+            let $main = $('<p class="button-blue">');
+            let $sub = $('<p class="button-blue">');
             $main.attr('data-id', val.id);
             $main.attr('data-name', name);
             $main.text(name);
@@ -30,6 +33,8 @@ $.ajax({
             $sub.addClass('hidden');
 
             $main.click(function() {
+                // Kontrollerar om elementet med id "antal" finns.
+                // Om det finns hindras användare från att lägga till fler person än vad som är angivet.
                 if(document.getElementById("antal")) {
                     if(document.getElementById("antal").valueAsNumber > $("#chosencontainer > p:not(.hidden)").length) {
                         $(this).toggleClass('hidden');
@@ -39,6 +44,7 @@ $.ajax({
                         $("#messagebox").toggleClass("hidden");
                         $("#overlay").toggleClass("overlay");
                     }
+                // Annars kan personer lägga till i obegränsat antal.
                 } else {
                     $(this).toggleClass('hidden');
                     $(`#chosencontainer > p[data-id=${val.id}]`).toggleClass('hidden');
@@ -54,7 +60,8 @@ $.ajax({
             $('#chosencontainer').append($sub);
         });
 
-
+        // Sökfunktionen. Gömmer alla element när användare skriver något och visar enbart de vars data-name tagg
+        // matchar det användare skriver.
         let tags = $('p[data-name');
         $('#search').bind('input', function() {
             let val = $.trim(this.value.toLowerCase()); // Det här det man skriver in när man söker.
@@ -65,6 +72,7 @@ $.ajax({
             }).removeClass('hidden');
         });
 
+        // Visar alla elementen igen.
         $('#deletebutton').click(function() {
             $('#search').val("");
             tags.removeClass('hidden');
@@ -75,7 +83,7 @@ $.ajax({
     }
 });
 
-
+// Funktion för att stänga av och sätta på knapparna för att välja personer.
 function showOrHideParticipants(checkbox) {
     if(checkbox.checked) {
         $("#personer").removeClass("blur")

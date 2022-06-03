@@ -1,3 +1,4 @@
+// Skapar en datumväljare.
 $(function() {
     $( "#datepicker" ).datepicker({
         showOn: "button",
