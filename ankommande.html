@@ -36,7 +36,6 @@
                 <article>
                     <form id="ankommandeform" class="grid double-column grid-column-05fr" onsubmit="postArrival();return false;">
                         <section class="grid single-column align-start">
-    <!--                    <input type="text" id="UNO" name="UNO" required placeholder="" oninvalid="this.setCustomValidity('Ange Ankommande Person')" oninput="this.setCustomValidity('')"/>-->
                             <label for="date">Datum</label>
                             <input type="date" id="date" name="date" required pattern="^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$" oninvalid="this.setCustomValidity('Ange Datum')" oninput="this.setCustomValidity('')"/>
                             <button class="button-orange" form="ankommandeform">Registrera ankommande</button>
